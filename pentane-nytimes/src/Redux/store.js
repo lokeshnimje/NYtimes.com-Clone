@@ -5,4 +5,4 @@ import thunk from "redux-thunk";
 
 const rootReducer=combineReducers({auth:authReducer,getData:getReducer});
 
-const store=createStore(rootReducer,applyMiddleware(thunk));
+export const store=createStore(rootReducer,applyMiddleware(thunk));
