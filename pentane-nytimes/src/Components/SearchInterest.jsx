@@ -82,21 +82,29 @@ dropdown3: {
   },
 }));
 
- function SearchIntrest() {
+ function SearchIntrest( {interest, setInterest} ) {
+
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [ id, setId ] =React.useState("");
+
   const [ selection, setSelection ] =React.useState()
+  
   const handleClick = (e) => {
       setId(e.currentTarget.id)
-      console.log(typeof id)
-    setOpen((prev) =>  !prev);
+      setOpen((prev) =>  !prev);
    
   };
 
   const handleClickAway = () => {
     setOpen(false);
   };
+  // handleChecked
+ 
+  const  handleChecked =(e) => {
+    const { name, value  } =e.target
+    setInterest({...interest,[name]:value})
+  }
 
   return (
     <ClickAwayListener onClickAway={handleClickAway}>
@@ -125,9 +133,9 @@ dropdown3: {
                     <ul className={classes.dropdown2}>
                             {/* reused heading_li here be cautious  */}
                             <li className="heading_li_first"> Section <span className="up_arrow_icon_span"><ExpandLessIcon /></span></li>
-                            <li> <input type="checkbox"/> Any</li>
-                            <li> <input type="checkbox"/> Arts</li>
-                            <li> <input type="checkbox"/> Books</li>
+                            <li> <input type="checkbox" /> Any</li>
+                            <li> <input type="checkbox"  value="Arts" onClick={ handleChecked } /> Arts</li>
+                            <li> <input type="checkbox"  value="Books" onClick={ handleChecked }/> Books</li>
                             <li> <input type="checkbox"/> Business</li>
                             <li> <input type="checkbox"/> Movies</li>
                             <li> <input type="checkbox"/> New York</li>
@@ -148,14 +156,14 @@ dropdown3: {
                         {/* reused heading_li here be cautious  */}
                             <li className="heading_li_first"> Type <span className="up_arrow_icon_span"><ExpandLessIcon /></span></li>
                             <li> <input type="checkbox"/> Any</li>
-                            <li> <input type="checkbox"/> Article</li>
-                            <li> <input type="checkbox"/> Audio</li>
-                            <li> <input type="checkbox"/> Audiocontainer</li>
-                            <li> <input type="checkbox"/> Image Slideshow</li>
-                            <li> <input type="checkbox"/> Interactive Graphics</li>
-                            <li> <input type="checkbox"/> Recipe</li>
-                            <li> <input type="checkbox"/> Video </li>
-                            <li> <input type="checkbox"/> Wirecutterarticle</li>
+                            <li> <input type="checkbox" name="types"   value="article" onClick={ handleChecked }/> Article</li>
+                            <li> <input type="checkbox" name="types" value = "audio" onClick= {   handleChecked } /> Audio</li>
+                            <li> <input type="checkbox" name="types" value = "audiocontainer" onClick= {   handleChecked } /> Audiocontainer</li>
+                            <li> <input type="checkbox" name="types" value = "imagesildeshow" onClick= {   handleChecked } /> Image Slideshow</li>
+                            <li> <input type="checkbox" name="types" value = "interactive" onClick= {   handleChecked } /> Interactive Graphics</li>
+                            <li> <input type="checkbox" name="types" value = "recipe" onClick= {   handleChecked } /> Recipe</li>
+                            <li> <input type="checkbox" name="types" value = "video" onClick= {   handleChecked } /> Video </li>
+                            <li> <input type="checkbox" name="types" value = "wirecutterarticle" onClick= {   handleChecked } /> Wirecutterarticle</li>
                             
                     </ul>
                     ) : null}

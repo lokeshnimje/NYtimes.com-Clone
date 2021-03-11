@@ -20,60 +20,60 @@ return (<div>
             <Footer.Row>
                 <Footer.Column>
                 <Footer.Title >News</Footer.Title>
-                    <Footer.Link >Home Page</Footer.Link>
-                    <Footer.Link >World</Footer.Link>
-                    <Footer.Link >Coronavirus</Footer.Link>
-                    <Footer.Link >U.S</Footer.Link>
-                    <Footer.Link> Politics </Footer.Link>
-                    <Footer.Link> New York </Footer.Link>
-                    <Footer.Link> Business </Footer.Link>
-                    <Footer.Link> Tech </Footer.Link>
-                    <Footer.Link> Science </Footer.Link>
-                    <Footer.Link> Sport </Footer.Link>
-                    <Footer.Link> Obituaries </Footer.Link>
-                    <Footer.Link> Todays's Paper </Footer.Link>
-                    <Footer.Link> Corrections </Footer.Link>
+                    <Footer.Links >Home Page</Footer.Links>
+                    <Footer.Links >World</Footer.Links>
+                    <Footer.Links >Coronavirus</Footer.Links>
+                    <Footer.Links >U.S</Footer.Links>
+                    <Footer.Links> Politics </Footer.Links>
+                    <Footer.Links> New York </Footer.Links>
+                    <Footer.Links> Business </Footer.Links>
+                    <Footer.Links> Tech </Footer.Links>
+                    <Footer.Links> Science </Footer.Links>
+                    <Footer.Links> Sport </Footer.Links>
+                    <Footer.Links> Obituaries </Footer.Links>
+                    <Footer.Links> Todays's Paper </Footer.Links>
+                    <Footer.Links> Corrections </Footer.Links>
                 </Footer.Column>
                 <Footer.Column>
                 <Footer.Title>Opinion</Footer.Title>
-                    <Footer.Link > Today's Opinion </Footer.Link>
-                    <Footer.Link > Op-Ed Columnists </Footer.Link>
-                    <Footer.Link > Editorials </Footer.Link>
-                    <Footer.Link > Op-Ed Contributors </Footer.Link>
-                    <Footer.Link > Letters </Footer.Link>
-                    <Footer.Link > Sunday Review </Footer.Link>
-                    <Footer.Link > Video: Opinion </Footer.Link>
+                    <Footer.Links > Today's Opinion </Footer.Links>
+                    <Footer.Links > Op-Ed Columnists </Footer.Links>
+                    <Footer.Links > Editorials </Footer.Links>
+                    <Footer.Links > Op-Ed Contributors </Footer.Links>
+                    <Footer.Links > Letters </Footer.Links>
+                    <Footer.Links > Sunday Review </Footer.Links>
+                    <Footer.Links > Video: Opinion </Footer.Links>
                 </Footer.Column>
                 <Footer.Column>
                 <Footer.Title>Arts</Footer.Title>
-                    <Footer.Link > Todays's Arts</Footer.Link>
-                    <Footer.Link > Art & Design</Footer.Link>
-                    <Footer.Link > Books </Footer.Link>
-                    <Footer.Link > Dance </Footer.Link>
-                    <Footer.Link > Movies </Footer.Link>
-                    <Footer.Link > Music </Footer.Link>
-                    <Footer.Link > Pop Culture </Footer.Link>
-                    <Footer.Link > Television </Footer.Link>
-                    <Footer.Link > Theater </Footer.Link>
-                    <Footer.Link > Video Arts </Footer.Link>
+                    <Footer.Links > Todays's Arts</Footer.Links>
+                    <Footer.Links > Art & Design</Footer.Links>
+                    <Footer.Links > Books </Footer.Links>
+                    <Footer.Links > Dance </Footer.Links>
+                    <Footer.Links > Movies </Footer.Links>
+                    <Footer.Links > Music </Footer.Links>
+                    <Footer.Links > Pop Culture </Footer.Links>
+                    <Footer.Links > Television </Footer.Links>
+                    <Footer.Links > Theater </Footer.Links>
+                    <Footer.Links > Video Arts </Footer.Links>
                 </Footer.Column>
                 <Footer.Column>
                 <Footer.Title>Living</Footer.Title>
-                    <Footer.Link > At Home </Footer.Link>
-                    <Footer.Link > Automibiles </Footer.Link>
-                    <Footer.Link > Games </Footer.Link>
-                    <Footer.Link > Education </Footer.Link>
-                    <Footer.Link > Food </Footer.Link>
-                    <Footer.Link > Health </Footer.Link>
-                    <Footer.Link > Jobs </Footer.Link>
-                    <Footer.Link > Love </Footer.Link>
-                    <Footer.Link > Magzine </Footer.Link>
-                    <Footer.Link > Parenting </Footer.Link>
-                    <Footer.Link > Real Estate </Footer.Link>
-                    <Footer.Link > Recipes </Footer.Link>
-                    <Footer.Link > Styles </Footer.Link>
-                    <Footer.Link > T Magzine </Footer.Link>
-                    <Footer.Link > Travel </Footer.Link>
+                    <Footer.Links > At Home </Footer.Links>
+                    <Footer.Links > Automibiles </Footer.Links>
+                    <Footer.Links > Games </Footer.Links>
+                    <Footer.Links > Education </Footer.Links>
+                    <Footer.Links > Food </Footer.Links>
+                    <Footer.Links > Health </Footer.Links>
+                    <Footer.Links > Jobs </Footer.Links>
+                    <Footer.Links > Love </Footer.Links>
+                    <Footer.Links > Magzine </Footer.Links>
+                    <Footer.Links > Parenting </Footer.Links>
+                    <Footer.Links > Real Estate </Footer.Links>
+                    <Footer.Links > Recipes </Footer.Links>
+                    <Footer.Links > Styles </Footer.Links>
+                    <Footer.Links > T Magzine </Footer.Links>
+                    <Footer.Links > Travel </Footer.Links>
                 </Footer.Column>
                 {/* newly added column */}
                 <Footer.Column>    

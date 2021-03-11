@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Wrapper, Row, Column, Link, Title, List, FooterBottom } from './styles/StyledFooter';
+import { Container, Wrapper, Row, Column, Links, Title, List, FooterBottom } from './styles/StyledFooter';
 
 export default function Footer({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
@@ -17,12 +17,12 @@ Footer.Column = function FooterColumn({ children, ...restProps }) {
   return <Column {...restProps}>{children}</Column>;
 };
 
-Footer.Link = function FooterLink({ children, ...restProps }) {
-  return <Link {...restProps}>{children}</Link>;
+Footer.Links = function FooterLink({ children, ...restProps }) {
+  return <Links {...restProps}>{children}</Links>;
 };
 
 Footer.Link2 = function FooterLink({ children, ...restProps }) {
-  return <Link {...restProps}>{children}</Link>;
+  return <Links {...restProps}>{children}</Links  >;
 };
 
 Footer.Title = function FooterTitle({ children, ...restProps }) {

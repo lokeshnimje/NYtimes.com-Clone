@@ -37,16 +37,19 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-const Search = () => {
+const Search = ({ types, sort }) => {
     const [query, setQuery ] =React.useState("")
     const classes = useStyles();
     const { news } = useSelector( (state) => state.getData)
     const dispatch = useDispatch()  //action dispatcher
-    console.log(process.env.REACT_NEWSFEED_API)
-const handleSubmit =(e)=>{
-  e.preventDefault();
-  dispatch( fetchData(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&api-key=${process.env.REACT_NEWSFEED_API}`) )
-}
+
+    const v = process.env.REACT_APP_NEWSFEED_API
+    console.log(v)
+    
+    const handleSubmit =(e)=>{
+      e.preventDefault();
+      dispatch( fetchData(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&api-key=${v}&types=${types}&sort=${sort}`) )
+    }
     return (
         <>
           <div component="form" className={classes.root}>

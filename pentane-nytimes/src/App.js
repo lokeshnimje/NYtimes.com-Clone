@@ -10,8 +10,10 @@ import { FooterContainer } from './Components/FooterContainer';
 function App() {
   return (
     < >
-      <Routes/>
-      {/* <FooterContainer /> */}
+    
+      {/* <Routes/> */}
+      <FooterContainer />
+      <SearchResultPage />
     </>
   );
 }

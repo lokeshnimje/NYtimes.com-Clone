@@ -40,15 +40,17 @@ justify-content: center;
 
 
 const SearchResultPage = () => {
-    const [ interest, setInterest ] =React.useState({dateRange:"",types:""})
+    const [ interest, setInterest ] =React.useState({ types:"" })
+    const [ selectRelevance, setSelectRelevance ] =React.useState( "" )
+    console.log(interest.types)
     return (
             <OuterWrapper>
                   <InnerWrapper>
-                    <Search />
-                    <select className="select">
+                    <Search types = { interest.types } sort ={ selectRelevance } />
+                    <select  onClick ={ (e) => setSelectRelevance( e.target.value ) } className="select">
                         <option value="">Sort by Relevance</option>
-                        <option value="">Sort by Newest</option>
-                        <option value="">Sort by Oldest</option>
+                        <option value="newest">Sort by Newest</option>
+                        <option value="oldest">Sort by Oldest</option>
                     </select>
                 </InnerWrapper>
                 <div className="intrestSearch">

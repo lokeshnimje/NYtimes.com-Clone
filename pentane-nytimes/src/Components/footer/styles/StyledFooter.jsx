@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { Link } from "react-router-dom"
 export const Container = styled.div`
   padding: 0px 46px 9px 46px;
   margin: 0px 114px 0px 114px;
@@ -39,13 +39,14 @@ export const Row = styled.div`
   
 `;
 
-export const Link = styled.a`
+export const Links = styled(Link)`
   color: #333333;
   margin-bottom: 10px;
   font-size: 14px;
   line-height:16px;
   font-weight: 500;
   font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
   &:hover {
     text-decoration: underline;
     cursor : pointer;
