@@ -8,9 +8,9 @@ const Routes = () => {
     return (
         <>
             <Switch>
-                {/* <Route>
+                <Route>
                     <Navbar/>
-                </Route>                 */}
+                </Route>                
                 <Route exact path = "/registeration">
                     <RegisterationPage />
                 </Route>
