@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Section_latestNewsCard = ({published_date, title, abstract, byline, multimedia}) => {
-    let imgUrl = multimedia[4].url
-    let caption = multimedia[0].caption
+    let imgUrl = (multimedia == null)?"https://static01.nyt.com/images/2021/03/10/us/10oil-01/10oil-01-mediumThreeByTwo210.jpg": multimedia[4].url
+    let caption =  "photo"
     let date = published_date.trim().split("-")
     let day= date[2].split("T")
     const Month = (month)=>{

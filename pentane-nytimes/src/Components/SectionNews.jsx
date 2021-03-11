@@ -4,6 +4,7 @@ import Section_latestNews from './Section_latestNews'
 import Section_popular from './Section_popular'
 import { fetchSectionData } from "../Redux/getData/action"
 import { useDispatch, useSelector } from "react-redux"
+import Weather from './Weather'
 
 
 const SectionNews = () => {
@@ -43,7 +44,10 @@ const SectionNews = () => {
           <div>
             
             <div style = {{width:"90%", margin:"15px auto", marginTop:"50px"}}> 
-                  <div style={{fontSize:"35px", textAlign:"left",  fontWeight:"500"}}>{name.toUpperCase()}</div>     
+                  <div style = {{display:"flex", justifyContent:"space-between"}}>
+                    <div style={{fontSize:"35px", textAlign:"left",  fontWeight:"500"}}>{name.toUpperCase()}</div> 
+                    <Weather/>
+                  </div>
                   <hr/> 
                   {news && <Section_popular data = {news} />}
                   { <Section_latestNews data = {news}/> }
