@@ -85,9 +85,9 @@ const Section_latestNewsCard = ({published_date, title, abstract, byline, multim
     `
     const Wrapper = styled.section`
         display: flex;
-        border-bottom: 1px black solid;
+        border-bottom: 1px #ddd solid;
         padding: 10px;
-        width:70%;
+        width:90%;
         padding-bottom: 20px;
 
         div {
@@ -106,7 +106,7 @@ const Section_latestNewsCard = ({published_date, title, abstract, byline, multim
                 <span> {byline} </span>
             </Detail>
             <div>
-                <img src={imgUrl} alt={caption}/>
+                <img src={imgUrl} alt={caption} style={{width:"220px",height:"170px"}} />
             </div>
         </Wrapper>
     )

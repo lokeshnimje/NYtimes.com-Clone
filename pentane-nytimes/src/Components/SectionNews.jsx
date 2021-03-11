@@ -45,10 +45,10 @@ const SectionNews = () => {
             
             <div style = {{width:"90%", margin:"15px auto", marginTop:"50px"}}> 
                   <div style = {{display:"flex", justifyContent:"space-between"}}>
-                    <div style={{fontSize:"35px", textAlign:"left",  fontWeight:"500"}}>{name.toUpperCase()}</div> 
+                    <div style={{fontSize:"35px", textAlign:"left",  fontWeight:"600"}}>{name.toUpperCase()}</div> 
                     <Weather/>
                   </div>
-                  <hr/> 
+                  <div style ={{ borderTop:'3px solid #ddd', padding:'1px', borderBottom:'1px solid #ddd'}}></div>
                   {news && <Section_popular data = {news} />}
                   { <Section_latestNews data = {news}/> }
             </div>

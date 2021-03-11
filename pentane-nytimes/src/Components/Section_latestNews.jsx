@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Advertisement from './AdvertisementSmall'
 import Section_latestNewsCard from './Section_latestNewsCard'
 import Section_latestSearch from './Section_latestSearch'
 
@@ -36,6 +37,11 @@ const Section_latestNews = ({data}) => {
     display:flex;
 
   ` 
+
+  const secondHalf = styled.div`
+    display:flex;
+    justifyContent:
+  `
   // console.log(data);
   
 
@@ -45,10 +51,16 @@ const Section_latestNews = ({data}) => {
                 <InnerTab onClick = {()=> setTrue(true)}  >Latest</InnerTab> 
                 <InnerTab  onClick = {()=> setTrue(false)}>Search</InnerTab>
             </Design>
-            <div>
-                {isTrue ? (data?.map((item)=> <Section_latestNewsCard {...item}/>) ): <Section_latestSearch/> }
+            <div style = {{display:"flex", justifyContent:"space-evenly"}}>              
+                <div style = {{margin:"0",  width:"70%", padding:"0"}}>
+                    {isTrue ? (data?.map((item)=> <Section_latestNewsCard {...item}/>) ): <Section_latestSearch/> }
+                </div>
+                <div>
+                <Advertisement/>
+                <Advertisement/>
+                </div>
             </div>
-        
+
 
         </Wrapper>
     )
