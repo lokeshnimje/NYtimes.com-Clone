@@ -1,13 +1,32 @@
 import React from 'react'
-import {Route} from "react-router-dom"
+import { Route, Switch } from "react-router-dom"
 import Navbar from '../Components/Navbar'
+import { LoginPage } from '../Pages/LoginPage'
+import { RegisterationPage } from '../Pages/RegisterationPage'
+import { SearchResultPage } from '../Pages/SearchResultPage'
 const Routes = () => {
     return (
         <>
-            <Route>
-                <Navbar/>
-                {/* <h3>Page Not Found</h3> */}
-            </Route>
+            <Switch>
+                <Route>
+                    <Navbar/>
+                </Route>                
+                <Route exact path = "/registeration">
+                    <RegisterationPage />
+                </Route>
+                <Route exact path = "/login">
+                        <LoginPage />
+                </Route>
+                {/* SearchResult page  */}
+                <Route exact path = "/search">
+                    <SearchResultPage />
+                </Route>
+                <Route>
+                    <h2>
+                        Error: Page not found
+                    </h2>
+                </Route>
+            </Switch>
         </>
     )
 }
