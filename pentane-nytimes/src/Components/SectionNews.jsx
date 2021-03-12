@@ -33,7 +33,7 @@ const SectionNews = () => {
 
   if (isLoading) {
     return (
-      <div>...Loading </div>
+      <div style ={{margin:"10px 50%",}}> <img style ={{margin:"auto",}} width="300px" height="300px" src="https://www.bluechipexterminating.com/wp-content/uploads/2020/02/loading-gif-png-5.gif" alt="loading"/> </div>
     )
   } else if (isError) {
     return (
