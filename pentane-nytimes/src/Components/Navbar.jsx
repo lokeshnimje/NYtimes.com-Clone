@@ -8,6 +8,8 @@ import IconButton from '@material-ui/core/IconButton';
 import SideMenuDrawer from './SideMenuDrawer';
 import { useParams } from 'react-router';
 import {useLocation, useHistory} from "react-router"
+import {FaSearch } from "react-icons/fa";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -50,6 +52,7 @@ export default function Navbar() {
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <SideMenuDrawer/>
           </IconButton>
+          <FaSearch/>
           <Typography>
             <h4>{(name)? name.toUpperCase(): ""}</h4>
           </Typography>
