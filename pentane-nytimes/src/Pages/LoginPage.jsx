@@ -7,7 +7,7 @@ import FormControl from "@material-ui/core/FormControl";
 import Button from "@material-ui/core/Button";
 import { Checkbox, FormControlLabel } from "@material-ui/core";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { LoginBottom } from "../Components/LoginBottom";
 import { LoginNavbar } from "../Components/LoginNavbar";
 import {useDispatch, useSelector} from "react-redux"
@@ -208,6 +208,7 @@ function LoginPage() {
         </p>
       </div>
       {/*  */}
+      {isAuth && userType=="Admin"?<Redirect to="/admin"/>:isAuth?<Redirect to="/"/>:null}
     </>
   );
 }
