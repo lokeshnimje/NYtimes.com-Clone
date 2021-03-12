@@ -6,6 +6,7 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import MenuIcon from '@material-ui/icons/Menu';
 import ListItemText from '@material-ui/core/ListItemText';
+import { Link } from 'react-router-dom';
 
 
 const useStyles = makeStyles({
@@ -37,7 +38,7 @@ export default function SideMenuDrawer(){
 
     setState({ ...state, [anchor]: open });
   };
-
+ 
   const list = (anchor) => (
     <div
         className={classes.fullList}  onClick={toggleDrawer(anchor, false)}
@@ -46,7 +47,7 @@ export default function SideMenuDrawer(){
       <List>
         {category1.map((text) => (
           <ListItem className={classes.menu} button key={text}>
-            <ListItemText  primary={text} />
+          <Link to = {`/${text.toLowerCase().replace(/[^\w\s]/gi, "")}`}> <ListItemText  primary={text} /> </Link> 
           </ListItem>
         ))}
       </List>

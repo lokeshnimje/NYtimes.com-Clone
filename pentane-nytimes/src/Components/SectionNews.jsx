@@ -24,7 +24,7 @@ const SectionNews = () => {
   React.useEffect(()=>{
     getNewsData()
     
-  },[])
+  },[name])
   // window.onload = ()=>{
   //   getNewsData()
   // }

@@ -1,0 +1,31 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "fname": "lokesh",
+      "lname": "nimje",
+      "email": "lokesh.nimje@gmail.com",
+      "pass": "masai",
+      "userType": "Admin",
+      "savedArticle": []
+    },
+    {
+      "fname": "Lokesh",
+      "lname": "Nimje",
+      "email": "lokesh.nimje@gmail.com",
+      "pass": "1234",
+      "userType": "Reader",
+      "savedArticle": [],
+      "id": 3
+    },
+    {
+      "fname": "Rakesh",
+      "lname": "Thampy",
+      "email": "rakesh.thampy@gmail.com",
+      "pass": "masai",
+      "userType": "Admin",
+      "savedArticle": [],
+      "id": 3
+    }
+  ]
+}
