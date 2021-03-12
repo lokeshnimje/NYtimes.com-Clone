@@ -6,36 +6,34 @@ import { RegisterationPage } from '../Pages/RegisterationPage'
 import { SearchResultPage } from '../Pages/SearchResultPage'
 import MainArticle from '../Components/MainArticle'
 import SectionNews from '../Components/SectionNews'
-
+import { HomePage } from "../Pages/HomePage"
 const Routes = () => {
     return (
         <>
-            <Switch>
-                <Route>
-                    <Navbar/>
-                </Route>                
-                <Route exact path = "/registeration">
-                    <RegisterationPage />
-                </Route>
-                <Route exact path = "/login">
-                        <LoginPage />
-                </Route>
-                {/* SearchResult page  */}
-                <Route exact path = "/search">
-                    <SearchResultPage />
-                </Route>          
+             <Navbar/>
 
-                <Route>
-                    <h2>
-                        Error: Page not found
-                    </h2>
-                </Route>
-
-            </Switch>
-            <Route exact path = "/:name">
+            <Route exact path="/">
+                <HomePage/>
+            </Route>
+            <Route exact path="/Home">
+                <HomePage />   
+            </Route>           
+            <Route exact path = "/registeration">
+                <RegisterationPage />
+            </Route>
+            <Route exact path = "/login">
+                    <LoginPage />
+            </Route>
+            {/* SearchResult page  */}
+            <Route exact path = "/search">
+                <SearchResultPage />
+            </Route>  
+            <Route exact path = "/registration">
+                <RegisterationPage/>
+            </Route>        
+            <Route exact path = "/Articles/:name">
                 <SectionNews/>
             </Route>
-
             <Route exact path = "/news/:title">
                 <MainArticle/>
             </Route>

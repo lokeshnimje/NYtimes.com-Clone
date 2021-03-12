@@ -5,6 +5,7 @@ import {LoginPage} from "./Pages/LoginPage"
 import { RegisterationPage } from './Pages/RegisterationPage';
 import { SearchResultPage } from './Pages/SearchResultPage';
 import { FooterContainer } from './Components/FooterContainer';
+import { HomePage } from './Pages/HomePage';
 
 // import { LoginBottom } from './Components/LoginBottom';
 function App() {
@@ -14,6 +15,7 @@ function App() {
       {/* <RegisterationPage/>
       <SearchResultPage />
       <FooterContainer /> */}
+      {/* <HomePage /> */}
       <FooterContainer />
       {/* <SearchResultPage /> */}
     </>

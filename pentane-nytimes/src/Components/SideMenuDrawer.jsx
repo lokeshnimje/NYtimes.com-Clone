@@ -6,7 +6,7 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import MenuIcon from '@material-ui/icons/Menu';
 import ListItemText from '@material-ui/core/ListItemText';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 const useStyles = makeStyles({
@@ -28,8 +28,8 @@ export default function SideMenuDrawer(){
   const [state, setState] = React.useState({
     left: false,
   });
-  const category1 = ['Home Page', 'World', 'U.S.', 'Politics','N.Y.', 'Business','Opinion','Tech','Science','Health','Sports']
-  const category2 = ['Arts','Books','Style','Food','Travel','Magazine','T Magzine','Real Estate','Obituaries','Video','The Upshot']
+  const category1 = ['Home', 'World', 'U.S.', 'Politics','N.Y.', 'Business','Opinion','Tech','Science','Health','Sports']
+  const category2 = ['Arts','Books','Style','Food','Travel','Magazine','T Magzine','Real Estate','Video','The Upshot']
   
   const toggleDrawer = (anchor, open) => (event) => {
     if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -47,7 +47,7 @@ export default function SideMenuDrawer(){
       <List>
         {category1.map((text) => (
           <ListItem className={classes.menu} button key={text}>
-          <Link to = {`/${text.toLowerCase().replace(/[^\w\s]/gi, "")}`}> <ListItemText  primary={text} /> </Link> 
+          <NavLink style={{textDecoration:"none", color:"black"}} to = {`/Articles/${text.toLowerCase().replace(/[^\w\s]/gi, "")}`}> <ListItemText  primary={text} /> </NavLink> 
           </ListItem>
         ))}
       </List>

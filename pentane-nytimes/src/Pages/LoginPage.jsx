@@ -131,7 +131,7 @@ function LoginPage() {
   return (
     <>
       {/* Log in Navabar */}
-      <LoginNavbar />
+      {/* <LoginNavbar /> */}
       {wrong ? <h4 style={{color:"red"}}>Invalid Credentials, if you have not registered then click on <span style={{color:"black"}}>Create one</span> to register</h4>: null}
       {isAuth && <h3 style={{color:"green"}}>You are successfully Logged in</h3>}
       <div className={classes.root}>
@@ -197,13 +197,13 @@ function LoginPage() {
 
         <p>
           Don'nt have a Times account?{" "}
-          <Link className={classes.forgotLink}>
+          <Link to="/registration" className={classes.forgotLink}>
             <b>Create one</b>
           </Link>{" "}
         </p>
       </div>
       {/*  */}
-      <LoginBottom />
+      {/* <LoginBottom /> */}
     </>
   );
 }
