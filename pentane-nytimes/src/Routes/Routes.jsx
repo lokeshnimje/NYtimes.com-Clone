@@ -6,14 +6,17 @@ import { RegisterationPage } from '../Pages/RegisterationPage'
 import { SearchResultPage } from '../Pages/SearchResultPage'
 import MainArticle from '../Components/MainArticle'
 import SectionNews from '../Components/SectionNews'
-
+import { HomePage } from "../Pages/HomePage"
 const Routes = () => {
     return (
         <>
-            <Switch>
+            
                 <Route>
                     <Navbar/>
-                </Route>                
+                </Route>     
+                <Route exact path="/">
+                    <HomePage />   
+                </Route>           
                 <Route exact path = "/registeration">
                     <RegisterationPage />
                 </Route>
@@ -25,13 +28,7 @@ const Routes = () => {
                     <SearchResultPage />
                 </Route>          
 
-                <Route>
-                    <h2>
-                        Error: Page not found
-                    </h2>
-                </Route>
-
-            </Switch>
+           
             <Route exact path = "/:name">
                 <SectionNews/>
             </Route>
