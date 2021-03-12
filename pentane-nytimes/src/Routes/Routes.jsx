@@ -1,5 +1,6 @@
 import React from 'react'
 import {Route} from "react-router-dom"
+import MainArticle from '../Components/MainArticle'
 import Navbar from '../Components/Navbar'
 import SectionNews from '../Components/SectionNews'
 const Routes = () => {
@@ -12,6 +13,10 @@ const Routes = () => {
 
             <Route exact path = "/:name">
                 <SectionNews/>
+            </Route>
+            
+            <Route exact path = "/news/:title">
+                <MainArticle/>
             </Route>
         </>
     )

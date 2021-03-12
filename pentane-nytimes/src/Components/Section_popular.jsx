@@ -1,6 +1,7 @@
 import React from 'react'
 import {makeStyles} from '@material-ui/core/styles'
 import {Grid, Paper} from '@material-ui/core'
+import { useHistory, useLocation } from 'react-router';
 
 const useStyles = makeStyles((theme)=>({
     grid: {
@@ -13,12 +14,16 @@ const useStyles = makeStyles((theme)=>({
         testAlign: 'center',
         color: theme.palette.text.secondary, 
         borderRadius: "0px",
-        boxShadow:"none"
+        boxShadow:"none",
+        cursor: "pointer"
 
     }
 }));
 const Section_popular = ({data}) => {
     const  classes = useStyles();
+    const location = useLocation(window.search)
+        const history = useHistory(location)
+       
     if (data.length>0) {
         console.log(data);
         const data1 = data[0]
@@ -92,13 +97,76 @@ const Section_popular = ({data}) => {
                     break;
             }
         }
+
+         
         
+        const handleClick1 = ()=>{
+            const payload  = {
+                head: data1.title,
+                sub: data1.abstract,
+                img: data1.multimedia[0].url,
+                cap: data1.multimedia[0].caption,
+                day: day1[0], 
+                month:  Month(date1[1]),
+                year: date1[0],
+                by: data1.byline 
+            }
+
+            localStorage.setItem("pageInfo", JSON.stringify(payload))
+            history.push(`/news/${data1.title}`)
+        }
+         const handleClick2 = ()=>{
+            const payload  = {
+               head: data2.title,
+                sub: data2.abstract,
+                img: data2.multimedia[0].url,
+                cap: data2.multimedia[0].caption,
+                day: day2[0], 
+                month:  Month(date2[1]),
+                year: date2[0],
+                by: data2.byline 
+            }
+
+            localStorage.setItem("pageInfo", JSON.stringify(payload))
+            history.push(`/news/${data2.title}`)
+        }
+        const handleClick3 = ()=>{
+            const payload  = {
+                head: data3.title,
+                sub: data3.abstract,
+                img: data3.multimedia[0].url,
+                cap: data3.multimedia[0].caption,
+                day: day3[0],
+                month: Month(date3[1]),
+                year: date3[0],
+                by: data3.byline
+            }
+
+            localStorage.setItem("pageInfo", JSON.stringify(payload))
+            history.push(`/news/${data3.title}`)
+        }
+        const handleClick4 = ()=>{
+            const payload  = {
+                head: data4.title,
+                sub: data4.abstract,
+                img: data4.multimedia[0].url,
+                cap: data4.multimedia[0].caption,
+                day: day4[0],
+                month: Month(date4[1]),
+                year: date4[0],
+                by: data4.byline
+            }
+
+            localStorage.setItem("pageInfo", JSON.stringify(payload))
+            history.push(`/news/${data4.title}`)
+        }
+            
     
         return (
             <Grid container spacing = {1} className = {classes.grid}>
 
                 <Grid item xs ={12} md = {7}>
-                    <Paper className = {classes.paper}>
+                    <Paper className = {classes.paper} onClick = {handleClick1}>
                         <div style = {{display:"flex", borderBottom: "1px black solid",paddingBottom:"15px"}}>
                             <div>
                                 <div style = {{textAlign:"left", fontWeight:"500", color:"black", fontSize:"20px", marginBottom:"5px"}}>{data1.title}</div>
@@ -114,7 +182,7 @@ const Section_popular = ({data}) => {
                 </Grid> 
 
             <Grid item  xs ={12} md = {5}>
-                    <Paper className = {classes.paper}>
+                    <Paper className = {classes.paper} onClick = {handleClick2}>
                         <div style = {{display:"flex", flexDirection:"column", borderBottom: "1px black solid", paddingBottom:"15px"}}>
                             <div style = {{textAlign:"center", fontWeight:"500", color:"black", fontSize:"20px", marginBottom:"5px"}}>{data2.title}</div>
                             <div style = {{display:"flex"}}>
@@ -127,7 +195,7 @@ const Section_popular = ({data}) => {
                 </Grid>
 
                 <Grid item  xs ={12} md = {7}>
-                <Paper className = {classes.paper}>
+                    <Paper className = {classes.paper} onClick = {handleClick3}>
                         <div style = {{display:"flex"}}>
                             <div>
                                 <div  style = {{textAlign:"left", fontWeight:"500", color:"black", fontSize:"20px", marginBottom:"5px"}}>{data3.title}</div>
@@ -143,8 +211,8 @@ const Section_popular = ({data}) => {
                 </Grid>
 
                 <Grid item  xs ={12} md = {5}>
-                    <Paper className = {classes.paper}>
-                    <div style = {{display:"flex", flexDirection:"column"}}>
+                    <Paper className = {classes.paper} onClick = {handleClick4}>
+                        <div style = {{display:"flex", flexDirection:"column"}}>
                             <div style = {{textAlign:"center", fontWeight:"500", color:"black", fontSize:"20px", marginBottom:"5px"}}>{data4.title}</div>
                             <div style = {{display:"flex"}}>
                                 <div  style = {{textAlign:"left", color:"black", fontSize:"16px", fontWeight:"400" , marginRight:"5px"}}>{data4.abstract}</div>

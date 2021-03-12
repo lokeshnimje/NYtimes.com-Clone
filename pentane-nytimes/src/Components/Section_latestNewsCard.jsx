@@ -1,9 +1,11 @@
+import { Link } from '@material-ui/core'
 import React from 'react'
+import { useHistory, useLocation } from 'react-router'
 import styled from 'styled-components'
 
 const Section_latestNewsCard = ({published_date, title, abstract, byline, multimedia}) => {
     let imgUrl = (multimedia == null)?"https://static01.nyt.com/images/2021/03/10/us/10oil-01/10oil-01-mediumThreeByTwo210.jpg": multimedia[4].url
-    let caption =  "photo"
+    let caption =   (multimedia == null)?"Copyright (c) 2021 The New York Times Company. All Rights Reserved.": multimedia[0].caption
     let date = published_date.trim().split("-")
     let day= date[2].split("T")
     const Month = (month)=>{
@@ -89,14 +91,33 @@ const Section_latestNewsCard = ({published_date, title, abstract, byline, multim
         padding: 10px;
         width:90%;
         padding-bottom: 20px;
+        cursor:pointer;
 
         div {
            margin:20px;
         }
 
     `
+    let largeImg = (multimedia == null)?"https://static01.nyt.com/images/2021/03/11/multimedia/11virus-astrazeneca-denmark1/merlin_182654916_deba33c0-da8b-4e82-b168-aa7681c091d8-superJumbo.jpg": multimedia[0].url
+    const location = useLocation(window.search)
+    const history = useHistory(location)
+    const payload  = {
+        head: title,
+        sub: abstract,
+        img: largeImg,
+        cap: caption,
+        day: day[0],
+        month: Month(date[1]),
+        year: date[0],
+        by: byline
+    }
+    const handleClick = ()=>{
+        
+        localStorage.setItem("pageInfo", JSON.stringify(payload))
+        history.push(`/news/${title}`)
+    }
     return (
-        <Wrapper>
+        <Wrapper onClick = {handleClick}>
             <div>
                 <Date>{ Month(date[1])} {day[0]}, {date[0]}</Date>
             </div>  
