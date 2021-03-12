@@ -12,8 +12,9 @@ function App() {
     < >
     
       {/* <Routes/> */}
-      <FooterContainer />
+      <RegisterationPage/>
       <SearchResultPage />
+      <FooterContainer />
     </>
 
   );
