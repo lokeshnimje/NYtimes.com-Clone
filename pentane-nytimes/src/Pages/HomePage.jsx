@@ -1,7 +1,8 @@
 import React from 'react'
-import AI from "../Components/AI"
+import HomePageBanner from '../Components/HomePageBanner'
 import AIA from "../Components/AIA"
 import axios from 'axios'
+
 
 const HomePage = () => {
 
@@ -13,12 +14,15 @@ const HomePage = () => {
         .then((res)=>{
             setData(res.data.results)
         })
-    }, [])
-
-    console.log(data)
+    }, [])    
 
     return (
-        <div>
+        <div style = {{marginTop:"50px" }} >
+            <div>
+                <HomePageBanner data = {data}/>            
+            </div>
+            <div style ={{ padding:'0', borderTop:'3px solid',  width:"91%", margin:"10px auto"}}></div>
+
             <AIA data3 = { data[5] }  data2 ={ data[4]}  data = {data[0]} imgUrl = {data[0]?.multimedia[0].url }  imgCaption = {data[0]?.multimedia[0].caption }
             
             />
@@ -33,7 +37,7 @@ const HomePage = () => {
             {/* <AI/> */}
 
             {/* {new Array(10).fill(0).map((el,index) => index > 5 ? <>asddds</> : null) } */}
-            
+           
         </div>
     )
 }

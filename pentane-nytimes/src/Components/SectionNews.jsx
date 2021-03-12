@@ -25,9 +25,7 @@ const SectionNews = () => {
     getNewsData()
     
   },[name])
-  // window.onload = ()=>{
-  //   getNewsData()
-  // }
+
 
  
 

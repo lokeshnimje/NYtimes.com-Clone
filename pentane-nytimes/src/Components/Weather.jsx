@@ -14,10 +14,11 @@ const Weather = () => {
             
         })
     }
+    console.log(lati, long);
     const options = {
         method: 'GET',
         url: 'https://api.weatherbit.io/v2.0/current',
-        params: {lat: lati || '28.5639' , lon: long || '77.2899', key: '0abbc01b2f574ccbb75ba5d2beb66f09'},
+        params: {lat: lati, lon: long , key: '0abbc01b2f574ccbb75ba5d2beb66f09'},
         headers: {}
     };
 
@@ -34,7 +35,7 @@ const Weather = () => {
     React.useEffect(()=>{
         GetLocation()
         getWeather()
-    },[])
+    },[lati])
     // console.log(lat, lon)
     return(
         <div style = {{height:"70px", width:"150px", fontSize:"13px"}}>
