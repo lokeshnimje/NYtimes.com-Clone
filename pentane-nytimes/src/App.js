@@ -11,7 +11,7 @@ function App() {
   return (
     < >
     
-      {/* <Routes/> */}
+      <Routes/>
       <FooterContainer />
       <SearchResultPage />
     </>
