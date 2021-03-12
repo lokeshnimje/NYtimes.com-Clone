@@ -52,7 +52,7 @@ export default function Navbar() {
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <SideMenuDrawer/>
           </IconButton>
-          <FaSearch/>
+          <FaSearch onClick/>
           <Typography>
             <h4>{(name)? name.toUpperCase(): ""}</h4>
           </Typography>
