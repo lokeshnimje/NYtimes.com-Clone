@@ -10,10 +10,12 @@ import { FooterContainer } from './Components/FooterContainer';
 function App() {
   return (
     < >
-    
       <Routes/>
-      <FooterContainer />
+      {/* <RegisterationPage/>
       <SearchResultPage />
+      <FooterContainer /> */}
+      <FooterContainer />
+      {/* <SearchResultPage /> */}
     </>
 
   );

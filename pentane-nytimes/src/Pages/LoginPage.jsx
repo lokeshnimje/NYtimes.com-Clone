@@ -10,7 +10,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { LoginBottom } from "../Components/LoginBottom";
 import { LoginNavbar } from "../Components/LoginNavbar";
-
+import axios from "axios"
 //Lable Remember me for checkbox
 const Lable = styled.p`
   font-size: 14px;
@@ -44,6 +44,8 @@ const useStyles = makeStyles((theme) => ({
     height: "40px",
     marginBottom: "10px",
     borderRadius: "5px",
+    fontSize:'18px',
+    alignItems:"center"
   },
   inputSubmit: {
     backgroundColor: "black",
@@ -76,7 +78,7 @@ const useStyles = makeStyles((theme) => ({
     cursor: "pointer",
   },
   lables: {
-    fontSize: "12px",
+    fontSize: "15px",
     fontWeight: "700",
     fontFamily: "Helvetica, arial, sans-serif",
     margin: "5px",
@@ -97,38 +99,50 @@ function LoginPage() {
   };
 
   const handleClickShowPassword = () => {
-    setValues({ ...values, showPassword: !values.showPassword });
+    setValues({ ...values, showPassword: !showPassword });
   };
 
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
 
+  const [data, setData] = React.useState([])
+  const [isAuth, setIsAuth] = React.useState(false)
+  const [ wrong, setWrong] = React.useState(false)
+  React.useEffect(()=>{
+    axios.get("http://localhost:3000/users")
+    .then(res=>setData(res.data))
+  },[data])
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert("hi");
+    const newData = data.find((item)=>item.email == values.email && item.pass == values.password)    
+    // console.log(data[0].email)  
+    if(newData){
+      setIsAuth(true)
+      setWrong(false)
+    } else {
+      setWrong(true)
+      setIsAuth(false)
+    }
   };
-
+  // console.log(isAuth)
+  const {email, password,showPassword} = values
   return (
     <>
       {/* Log in Navabar */}
       <LoginNavbar />
-      {/*  */}
+      {wrong ? <h4 style={{color:"red"}}>Invalid Credentials, if you have not registered then click on <span style={{color:"black"}}>Create one</span> to register</h4>: null}
+      {isAuth && <h3 style={{color:"green"}}>You are successfully Logged in</h3>}
       <div className={classes.root}>
         <form onSubmit={handleSubmit}>
-          <FormControl
-            fullWidth
-            variant="outlined"
-            classname={classes.formBox}
-            onSubmit={handleSubmit}
-          >
             <label className={classes.lables} htmlFor="">
               <b>Email Address</b>{" "}
             </label>
-            <OutlinedInput
+            <input
               type="email"
               className={classes.input}
-              value={values.email}
+              value={email}
               onChange={handleChange("email")}
             />
 
@@ -136,10 +150,11 @@ function LoginPage() {
               <b>Password</b>
             </label>
 
-            <OutlinedInput
+            <input
               className={classes.input}
-              type={values.showPassword ? "text" : "password"}
-              value={values.password}
+              // type={values.showPassword ? "password" : "text"}
+              type="password"
+              value={password}
               onChange={handleChange("password")}
               endAdornment={
                 <InputAdornment position="end">
@@ -148,7 +163,7 @@ function LoginPage() {
                     onClick={handleClickShowPassword}
                     onMouseDown={handleMouseDownPassword}
                   >
-                    {values.showPassword ? (
+                    {showPassword ? (
                       <label className={classes.lables}>show</label>
                     ) : (
                       <label className={classes.lables}>Hide</label>
@@ -162,7 +177,6 @@ function LoginPage() {
               <FormControlLabel
                 control={
                   <BlackCheckbox
-                    color="black"
                     className={classes.checkBox}
                     style={{ alignSelf: "start", height: "14px" }}
                   />
@@ -171,7 +185,7 @@ function LoginPage() {
               />
               <Link className={classes.forgotLink} style={{ alignSelf: "end" }}>
                 {" "}
-                Forgot your passeword?
+                Forgot your password?
               </Link>
             </div>
             <Input
@@ -179,7 +193,6 @@ function LoginPage() {
               type="submit"
               value="Log In"
             />
-          </FormControl>
         </form>
 
         <p>

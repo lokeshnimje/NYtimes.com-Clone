@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { LoginBottom } from '../Components/LoginBottom'
 import { LoginNavbar } from "../Components/LoginNavbar"
+import axios from "axios"
+import { LoginPage } from './LoginPage'
 const Wrapper = styled.div`
  margin : 100px auto;
  width:410px;
@@ -39,35 +41,62 @@ const Wrapper = styled.div`
      input{
          margin-left:12px;
      }
+     .select{
+        width:50px
+     }
+    
  }
-  label{
-     margin-top:11px;
-     padding-left:5px;
+  select{
+     margin:20px 10px;
+     paddingt:10px;
+     width: 100px
  }
-
 
 `
 const RegisterationPage = () => {
-    
+    const initialState = {
+        fname : "",
+        lname : "",
+        email : "",
+        pass : "",
+        userType : "",
+        savedArticle : []
+    }
+    const [state, setState] = React.useState(initialState)
+    const [isError, setIsError] = React.useState(false)
+    const [isRegistered, setIsRegistered] = React.useState(false)
+
+    const handleChange = (e) => {
+        const {name,value} = e.target
+        setState({...state, [name]:value}) 
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        // console.log(state)
+        axios.post("http://localhost:3000/users", {...state, savedArticle:[]})
+        .then(res=> setIsRegistered(true))
+        .catch(err => setIsError(true))
+    }
+    const {fname, lname, email, pass, userType, savedArticle} = state
     return (
         <>
         {/* reusing loginNavabr here */}
         <LoginNavbar />
+        {isRegistered ? <LoginPage/> : 
         <Wrapper>
-            <form action="" className="form">
-             
-                <input type="text" placeholder="First Name"/>
-                <input type="text" placeholder="Last Name"/>
-                <input type="text" placeholder="Email"/>
-                <input type="text" placeholder="Password"/>
-                <div className = "radioGroup">
-                    <input type="radio" name="userType"/> <label htmlFor="reader"> Reader</label>
-                    <input type="radio" name="userType"/> <label htmlFor="administrator"> Administrator</label>
-                </div>
-                <input type="submit" value="Register"/>
-                
+            {isError && <h3>Error while Registering</h3>}
+            <form onSubmit={handleSubmit} className="form">
+                <input type="text" name= 'fname' value={fname} onChange={handleChange}  placeholder="First Name"/>
+                <input type="text" value={lname} onChange={handleChange} name= 'lname' placeholder="Last Name"/>
+                <input type="text" value={email} onChange={handleChange} name= 'email' placeholder="Email"/>
+                <input type="text" value={pass} onChange={handleChange} name= 'pass' placeholder="Password"/>
+                <select className = "select" name="userType" value={userType} onChange={handleChange}>
+                    <option value="">I AM</option>
+                    {["Reader","Admin"].map(item=> <option key={item.id} value={item}>{item}</option>)}
+                </select>
+                <input type="submit" value="Register"/>     
             </form>
-        </Wrapper> 
+        </Wrapper> }
         {/* reusing loginbottom here */}
         <LoginBottom />
         </>
