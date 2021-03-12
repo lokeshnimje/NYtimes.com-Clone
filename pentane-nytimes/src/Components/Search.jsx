@@ -49,7 +49,7 @@ const Search = ({ types, sort }) => {
     
     const handleSubmit =(e)=>{
       e.preventDefault();
-      dispatch( fetchData(`https://api.nytimes.com/svc/search/v2/articlesearch.json?fq=${"The New York Times"}&q=${query}&api-key=${v}&types=${types}&sort=${sort}`) )
+      dispatch( fetchData(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&api-key=${v}&types=${types}&sort=${sort}`) )
     }
     return (
         <>
