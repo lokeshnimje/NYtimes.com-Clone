@@ -2,6 +2,8 @@ import React from 'react'
 import { Search } from '../Components/Search'
 import  styled from "styled-components"
 import { SearchIntrest } from '../Components/SearchInterest'
+import { SearchedNewsCard } from '../Components/SearchedNewsCard';
+import { useSelector } from "react-redux"
 
 const InnerWrapper = styled.div`
 background-color: #f7f7f7;
@@ -40,11 +42,12 @@ justify-content: center;
 
 
 const SearchResultPage = () => {
-    const [ interest, setInterest ] =React.useState({ types:"" })
+    const [ interest, setInterest ] =React.useState({ section:"", types:"" })
     const [ selectRelevance, setSelectRelevance ] =React.useState( "" )
-    console.log(interest.types)
+    const { news } = useSelector( (state)=> state.searchedData)
     return (
-            <OuterWrapper>
+            <>
+                            <OuterWrapper>
                   <InnerWrapper>
                     <Search types = { interest.types } sort ={ selectRelevance } />
                     <select  onClick ={ (e) => setSelectRelevance( e.target.value ) } className="select">
@@ -56,8 +59,9 @@ const SearchResultPage = () => {
                 <div className="intrestSearch">
                     <SearchIntrest  interest = { interest } setInterest = { setInterest } />
                 </div>
-
             </OuterWrapper>
+                {news.length > 0 ? news.map((item, index) => <SearchedNewsCard key={ index } { ...item } />) : <h1 style={{margin:'100px 500px '}}>No Result Found</h1>}
+            </>
     )
 }
 

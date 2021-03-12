@@ -116,13 +116,13 @@ dropdown3: {
                     {('l1'=== id ? open:null) ? (
                     <ul className={classes.dropdown}>
                         
-                            <li className="heading_li_first"> Date Range <span className="up_arrow_icon_span"><ExpandLessIcon /></span></li>
-                            <li > All since 1851</li>
-                            <li>Yesterday</li>
-                            <li>Past Week</li>
-                            <li>Past Month</li>
-                            <li>Past Year</li>
-                            <li>Specific Dates</li>              
+                            <li className="heading_li_first"> Date Range <span className="up_arrow_icon_span"><ExpandLessIcon  onClick={()=>setOpen(false)} /></span></li>
+                            <li onClick={()=>setOpen(false)}> All since 1851</li>
+                            <li onClick={()=>setOpen(false)}  >Yesterday</li>
+                            <li onClick={()=>setOpen(false)} >Past Week</li>
+                            <li onClick={()=>setOpen(false)} >Past Month</li>
+                            <li onClick={()=>setOpen(false)} >Past Year</li>
+                            <li onClick={()=>setOpen(false)} >Specific Dates</li>              
                     </ul>
                     ) : null}
 
@@ -132,7 +132,7 @@ dropdown3: {
                     {('l2'=== id ? open:null) ? (
                     <ul className={classes.dropdown2}>
                             {/* reused heading_li here be cautious  */}
-                            <li className="heading_li_first"> Section <span className="up_arrow_icon_span"><ExpandLessIcon /></span></li>
+                            <li className="heading_li_first"> Section <span className="up_arrow_icon_span"><ExpandLessIcon  onClick={()=>setOpen(false)}/></span></li>
                             <li> <input type="checkbox" /> Any</li>
                             <li> <input type="checkbox"  value="Arts" onClick={ handleChecked } /> Arts</li>
                             <li> <input type="checkbox"  value="Books" onClick={ handleChecked }/> Books</li>
@@ -154,7 +154,7 @@ dropdown3: {
                     {('l3'=== id ? open:null) ? (
                     <ul className={classes.dropdown3}>
                         {/* reused heading_li here be cautious  */}
-                            <li className="heading_li_first"> Type <span className="up_arrow_icon_span"><ExpandLessIcon /></span></li>
+                            <li className="heading_li_first"> Type <span className="up_arrow_icon_span"><ExpandLessIcon onClick={()=>setOpen(false)}/></span></li>
                             <li> <input type="checkbox"/> Any</li>
                             <li> <input type="checkbox" name="types"   value="article" onClick={ handleChecked }/> Article</li>
                             <li> <input type="checkbox" name="types" value = "audio" onClick= {   handleChecked } /> Audio</li>
