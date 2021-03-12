@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import SideMenuDrawer from './SideMenuDrawer';
+import { useParams } from 'react-router';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,7 +17,9 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
-    alignItems:"center"
+    textAlign: "center",
+    alignItems:"center",
+    justifyContent:"center",
   },
   login : {
     backgroundColor:"#567B95",
@@ -34,7 +37,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Navbar() {
   const classes = useStyles();
-
+  const {name} = useParams()
+  console.log(name);
   return (
     <div className={classes.root}>
       <AppBar className={classes.navbar} position="static">
@@ -43,10 +47,10 @@ export default function Navbar() {
             <SideMenuDrawer/>
           </IconButton>
           <Typography>
-            <h4>Politics</h4>
+            <h4>{(name)? name.toUpperCase(): ""}</h4>
           </Typography>
           <Typography variant="h6" className={classes.title}>
-            <img src="/title.png" alt="title" width="250px"/>
+            <img style = {{ margin:"auto"}} src="/title.png" alt="title" width="250px"/>
           </Typography>
           <Button className={classes.login} variant="text" size="small">Log in</Button>
         </Toolbar>
