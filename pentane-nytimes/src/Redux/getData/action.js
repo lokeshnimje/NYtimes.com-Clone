@@ -27,6 +27,7 @@ const fetchData=(url)=>(dispatch)=>{
     axios.get(url)
     .then(res=>{
         let action=getSuccess(res.data);
+        console.log(res.data.results)
         dispatch(action);
     })
     .catch(err=>{
@@ -34,4 +35,16 @@ const fetchData=(url)=>(dispatch)=>{
     })
 }
 
-export {fetchData};
+const fetchSectionData=(url)=>(dispatch)=>{
+    dispatch(getRequest());
+    axios.get(url)
+    .then(res=>{
+        let action=getSuccess(res.data.results);
+        dispatch(action);
+    })
+    .catch(err=>{
+        dispatch(getFailure());
+    })
+}
+
+export {fetchData, fetchSectionData};
