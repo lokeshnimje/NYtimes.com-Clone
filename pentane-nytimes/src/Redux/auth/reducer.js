@@ -3,7 +3,8 @@ const { AUTH_REQUEST, AUTH_SUCCESS, AUTH_FAILURE } = require("./actionTypes")
 const initState={
     isAuth:false,
     isLoading:false,
-    isError:false
+    isError:false,
+    data: []
 }
 
 const authReducer=(state=initState,{type,payload})=>{
@@ -21,6 +22,7 @@ const authReducer=(state=initState,{type,payload})=>{
                 isError:false,
                 isAuth:true,
                 isLoading:false,
+                data: payload
             }
         }
         case AUTH_FAILURE:{

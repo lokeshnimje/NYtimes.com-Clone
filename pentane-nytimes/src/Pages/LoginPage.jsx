@@ -10,6 +10,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { LoginBottom } from "../Components/LoginBottom";
 import { LoginNavbar } from "../Components/LoginNavbar";
+import {useDispatch, useSelector} from "react-redux"
+import {authentication,authRequest,authSuccess,authFailure} from "../Redux/auth/action"
 import axios from "axios"
 //Lable Remember me for checkbox
 const Lable = styled.p`
@@ -87,7 +89,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function LoginPage() {
+  const dispatch = useDispatch()
   const classes = useStyles();
+  const response = useSelector(state=> state.auth.data)
+  // console.log(response)
   const [values, setValues] = React.useState({
     email: "",
     password: "",
@@ -106,32 +111,32 @@ function LoginPage() {
     event.preventDefault();
   };
 
-  const [data, setData] = React.useState([])
   const [isAuth, setIsAuth] = React.useState(false)
   const [ wrong, setWrong] = React.useState(false)
-  React.useEffect(()=>{
-    axios.get("http://localhost:3000/users")
-    .then(res=>setData(res.data))
-  },[data])
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const newData = data.find((item)=>item.email == values.email && item.pass == values.password)    
-    // console.log(data[0].email)  
-    if(newData){
-      setIsAuth(true)
-      setWrong(false)
-    } else {
+  const [userType, setUserType] = React.useState("")
+    React.useEffect(()=>{
+      dispatch(authentication())
+      // setData(response)
+    },[])
+    
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      const newData = response.find((item)=>item.email == values.email && item.pass == values.password)    
+      // console.log(data[0].email)  
+      if(newData){
+        setUserType(newData.userType)
+        setIsAuth(true)
+        setWrong(false)
+      } else {
       setWrong(true)
       setIsAuth(false)
     }
   };
+  // console.log(userType)
   // console.log(isAuth)
   const {email, password,showPassword} = values
   return (
     <>
-      {/* Log in Navabar */}
-      {/* <LoginNavbar /> */}
       {wrong ? <h4 style={{color:"red"}}>Invalid Credentials, if you have not registered then click on <span style={{color:"black"}}>Create one</span> to register</h4>: null}
       {isAuth && <h3 style={{color:"green"}}>You are successfully Logged in</h3>}
       <div className={classes.root}>
@@ -203,7 +208,6 @@ function LoginPage() {
         </p>
       </div>
       {/*  */}
-      {/* <LoginBottom /> */}
     </>
   );
 }

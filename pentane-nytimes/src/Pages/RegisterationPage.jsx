@@ -1,7 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { LoginBottom } from '../Components/LoginBottom'
-import { LoginNavbar } from "../Components/LoginNavbar"
 import axios from "axios"
 import { LoginPage } from './LoginPage'
 const Wrapper = styled.div`

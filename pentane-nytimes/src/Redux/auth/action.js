@@ -22,20 +22,9 @@ const authFailure=()=>{
 
 const authentication=(payload)=>(dispatch)=>{
     dispatch(authRequest());
-    let config={
-        method:"",
-        url:"",
-        data:{
-
-        }
-    }
-    axios(config)
-    .then(res=>{
-
-    })
-    .catch(err=>{
-
-    })
+   axios.get("http://localhost:3000/users")
+    .then(res=> dispatch(authSuccess(res.data)))
+    .catch(err=> dispatch(authFailure()))
 }
 
 export {authentication,authRequest,authSuccess,authFailure}
