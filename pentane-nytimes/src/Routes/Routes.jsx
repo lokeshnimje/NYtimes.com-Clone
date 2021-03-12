@@ -7,6 +7,7 @@ import { SearchResultPage } from '../Pages/SearchResultPage'
 import MainArticle from '../Components/MainArticle'
 import SectionNews from '../Components/SectionNews'
 import { HomePage } from "../Pages/HomePage"
+import AdminPage from '../Pages/AdminPage'
 const Routes = () => {
     return (
         <>
@@ -36,6 +37,9 @@ const Routes = () => {
             </Route>
             <Route exact path = "/news/:title">
                 <MainArticle/>
+            </Route>
+            <Route exact path="/admin">
+                <AdminPage/>
             </Route>
         </>
     )
