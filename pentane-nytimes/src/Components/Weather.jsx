@@ -9,12 +9,13 @@ const Weather = () => {
 
     const GetLocation = ()=>{
         navigator.geolocation.getCurrentPosition((position)=>{
-            setLat(position.coords.latitude)
-            setLon(position.coords.longitude)
+            return (setLat(position.coords.latitude),
+                     setLon(position.coords.longitude)
+            )
             
         })
     }
-    console.log(lati, long);
+    
     const options = {
         method: 'GET',
         url: 'https://api.weatherbit.io/v2.0/current',
@@ -35,7 +36,7 @@ const Weather = () => {
     React.useEffect(()=>{
         GetLocation()
         getWeather()
-    },[lati])
+    },[lati, long])
     // console.log(lat, lon)
     return(
         <div style = {{height:"70px", width:"150px", fontSize:"13px"}}>
