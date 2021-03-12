@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import SideMenuDrawer from './SideMenuDrawer';
 import { useParams } from 'react-router';
-
+import {useLocation, useHistory} from "react-router"
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -38,7 +38,11 @@ const useStyles = makeStyles((theme) => ({
 export default function Navbar() {
   const classes = useStyles();
   const {name} = useParams()
-  console.log(name);
+  const location = useLocation(window.search)
+  const history = useHistory(location)
+  const handleLogin = () => {
+    history.push('/login')
+  }
   return (
     <div className={classes.root}>
       <AppBar className={classes.navbar} position="static">
@@ -52,7 +56,7 @@ export default function Navbar() {
           <Typography variant="h6" className={classes.title}>
             <img style = {{ margin:"auto"}} src="/title.png" alt="title" width="250px"/>
           </Typography>
-          <Button className={classes.login} variant="text" size="small">Log in</Button>
+          <Button className={classes.login} onClick={handleLogin} variant="text" size="small">Log in</Button>
         </Toolbar>
       </AppBar>
     </div>

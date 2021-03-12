@@ -81,7 +81,7 @@ const RegisterationPage = () => {
     return (
         <>
         {/* reusing loginNavabr here */}
-        <LoginNavbar />
+        {/* <LoginNavbar /> */}
         {isRegistered ? <LoginPage/> : 
         <Wrapper>
             {isError && <h3>Error while Registering</h3>}
@@ -98,7 +98,7 @@ const RegisterationPage = () => {
             </form>
         </Wrapper> }
         {/* reusing loginbottom here */}
-        <LoginBottom />
+        {/* <LoginBottom /> */}
         </>
     )
 }

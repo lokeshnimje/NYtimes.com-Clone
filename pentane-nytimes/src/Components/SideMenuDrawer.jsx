@@ -47,7 +47,7 @@ export default function SideMenuDrawer(){
       <List>
         {category1.map((text) => (
           <ListItem className={classes.menu} button key={text}>
-          <Link to = {`/${text.toLowerCase().replace(/[^\w\s]/gi, "")}`}> <ListItemText  primary={text} /> </Link> 
+          <Link to = {`/Articles/${text.toLowerCase().replace(/[^\w\s]/gi, "")}`}> <ListItemText  primary={text} /> </Link> 
           </ListItem>
         ))}
       </List>

@@ -10,29 +10,24 @@ import SectionNews from '../Components/SectionNews'
 const Routes = () => {
     return (
         <>
-            <Switch>
-                <Route>
                     <Navbar/>
-                </Route>                
+            {/* <Switch>              */}
                 <Route exact path = "/registeration">
                     <RegisterationPage />
                 </Route>
                 <Route exact path = "/login">
-                        <LoginPage />
+                     <LoginPage />
                 </Route>
                 {/* SearchResult page  */}
                 <Route exact path = "/search">
                     <SearchResultPage />
-                </Route>          
+                </Route>  
+                <Route exact path = "/registration">
+                    <RegisterationPage/>
+                </Route>        
 
-                <Route>
-                    <h2>
-                        Error: Page not found
-                    </h2>
-                </Route>
-
-            </Switch>
-            <Route exact path = "/:name">
+            {/* </Switch> */}
+            <Route exact path = "/Articles/:name">
                 <SectionNews/>
             </Route>
 
