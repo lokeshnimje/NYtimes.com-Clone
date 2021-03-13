@@ -1,5 +1,5 @@
 # Toggl-Track-Unit2-Project
-![Toggl Track](https://upload.wikimedia.org/wikipedia/en/7/70/Toggl_%28service%29_Logo.png)
+![Toggl Track](https://static01.nyt.com/vi-assets/images/share/1200x675_nameplate.png)
 
 
 ------------------- **INTRODUCTION** ---------------------- 
