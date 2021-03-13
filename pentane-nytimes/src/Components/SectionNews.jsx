@@ -5,6 +5,7 @@ import Section_popular from './Section_popular'
 import { fetchSectionData } from "../Redux/getData/action"
 import { useDispatch, useSelector } from "react-redux"
 import Weather from './Weather'
+import { Container } from '@material-ui/core'
 
 
 const SectionNews = () => {
@@ -14,7 +15,7 @@ const SectionNews = () => {
   const {isLoading} = useSelector( (state) => state.getData)
   const {isError} = useSelector( (state) => state.getData)
   const dispatch = useDispatch()  //action dispatcher
-
+  const [article,setArticle]=React.useState("");
   
   const getNewsData =()=>{
     const url = `https://api.nytimes.com/svc/topstories/v2/${name}.json?api-key=FIggacgleeORGRG2RudGPU94oYeKpAeO`
@@ -23,7 +24,9 @@ const SectionNews = () => {
 
   React.useEffect(()=>{
     getNewsData()
-    
+    if(localStorage.getItem("postedArticle")){
+      setArticle(JSON.parse(localStorage.getItem("postedArticle")))
+    };
   },[name])
 
 
@@ -47,6 +50,7 @@ const SectionNews = () => {
                     <Weather/>
                   </div>
                   <div style ={{ borderTop:'3px solid #ddd', padding:'1px', borderBottom:'1px solid #ddd'}}></div>
+                  {article?<Container><div dangerouslySetInnerHTML={article} ></div></Container>:null}
                   {news && <Section_popular data = {news} />}
                   { <Section_latestNews data = {news}/> }
             </div>
