@@ -11,36 +11,45 @@ import AdminPage from '../Pages/AdminPage'
 const Routes = () => {
     return (
         <>
-             <Navbar/>
+            <Navbar/>
+            <Switch>
 
-            <Route exact path="/">
-                <HomePage/>
-            </Route>
-            <Route exact path="/Home">
-                <HomePage />   
-            </Route>           
-            <Route exact path = "/registeration">
-                <RegisterationPage />
-            </Route>
-            <Route exact path = "/login">
-                    <LoginPage />
-            </Route>
-            {/* SearchResult page  */}
-            <Route exact path = "/search">
-                <SearchResultPage />
-            </Route>  
-            <Route exact path = "/registration">
-                <RegisterationPage/>
-            </Route>        
-            <Route exact path = "/Articles/:name">
-                <SectionNews/>
-            </Route>
-            <Route exact path = "/news/:title">
-                <MainArticle/>
-            </Route>
-            <Route exact path="/admin">
-                <AdminPage/>
-            </Route>
+                <Route exact path="/">
+                    <HomePage/>
+                </Route>
+                <Route exact path="/Home">
+                    <HomePage />   
+                </Route>
+
+                <Route exact path = "/registeration">
+                    <RegisterationPage />
+                </Route>
+
+                <Route exact path = "/login">
+                        <LoginPage />
+                </Route>
+               
+                <Route path = "/search">
+                    <SearchResultPage />
+                </Route>
+
+                <Route exact path = "/registration">
+                    <RegisterationPage/>
+                </Route>
+
+                <Route exact path = "/Articles/:name">
+                    <SectionNews/>
+                </Route>
+
+                <Route exact path = "/news/:title">
+                    <MainArticle/>
+                </Route>
+
+                <Route exact path="/admin">
+                    <AdminPage/>
+                </Route>
+
+            </Switch>
         </>
     )
 }

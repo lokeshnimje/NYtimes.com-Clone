@@ -107,7 +107,7 @@ return (<div>
                             <span style={{ marginBottom:'-25px',marginTop:'-25px'}}>
                                  <Footer.Link2 ><h3> <img style={{marginRight:'10px'}} src="home-delivery.png" alt="home delivery"/> Home Delivery </h3> </Footer.Link2>
                             </span>
-                                <span style={{ marginBottom:'-25px'}}> <Footer.Link2 > <h3><SiNewyorktimes style={{marginRight:'10px'}} /> Digital Subscription</h3></Footer.Link2></span>
+                                <span style={{ marginBottom:'-25px'}}> <Footer.Link2 > <h3><img style={{marginRight:'10px'}}  width="15px" height="20px" src="cooking.png" alt="cooking"/>Subscription</h3></Footer.Link2></span>
 
                             <span style={{ marginBottom:'-25px'}}>
                                 <Footer.Link2 > <h3><img style={{marginRight:'10px'}}  src="new-york-time-logo.png" alt="new york time logo"/> Games</h3></Footer.Link2>

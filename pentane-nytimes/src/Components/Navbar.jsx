@@ -11,7 +11,7 @@ import {useLocation, useHistory} from "react-router"
 import {FaSearch } from "react-icons/fa";
 import { useDispatch, useSelector } from 'react-redux' 
 import {logout} from "../Redux/auth/action"
-import {Link} from "react-router-dom"
+import {Link, NavLink} from "react-router-dom"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     alignItems:"center",
     justifyContent:"center",
+    cursor:"pointer"
   },
   login : {
     backgroundColor:"#567B95",
@@ -54,10 +55,11 @@ export default function Navbar() {
   const dispatch = useDispatch()
   const logout_user = () => {
       dispatch(logout())
+      history.push("/login")
   }
-  // const handleLogin = () => {
-  //   history.push('/login')
-  // }
+  const handleHome = () => {
+    history.push('/')
+  }
   return (
     <div className={classes.root}>
       <AppBar className={classes.navbar} position="static">
@@ -65,12 +67,12 @@ export default function Navbar() {
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <SideMenuDrawer/>
           </IconButton>
-          <FaSearch onClick/>
+        <NavLink to = "/search"><FaSearch/></NavLink>
           <Typography>
             <h4>{(name)? name.toUpperCase(): ""}</h4>
           </Typography>
           <Typography variant="h6" className={classes.title}>
-            <img style = {{ margin:"auto"}} src="/title.png" alt="title" width="250px"/>
+            <img style = {{ margin:"auto"}} src="/title.png" alt="title" width="250px"  onClick = {handleHome}/>
           </Typography>
           <Button className={classes.login} variant="text" size="small">
           {isAuth ? <Link className={classes.loginLink} onClick={logout_user}>LOGOUT</Link> :<Link  className={classes.loginLink} to='/login'>LOGIN</Link>}

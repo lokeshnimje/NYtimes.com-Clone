@@ -3,7 +3,7 @@ import React from 'react'
 import { useHistory, useLocation } from 'react-router'
 import styled from 'styled-components'
 
-const Section_latestNewsCard = ({published_date, title, abstract, byline, multimedia}) => {
+const Section_latestNewsCard = ({published_date, title, abstract, byline, multimedia, url}) => {
     let imgUrl = (multimedia == null)?"https://static01.nyt.com/images/2021/03/10/us/10oil-01/10oil-01-mediumThreeByTwo210.jpg": multimedia[4].url
     let caption =   (multimedia == null)?"Copyright (c) 2021 The New York Times Company. All Rights Reserved.": multimedia[0].caption
     let date = published_date?.trim().split("-")
@@ -109,7 +109,8 @@ const Section_latestNewsCard = ({published_date, title, abstract, byline, multim
         day: day[0],
         month: Month(date[1]),
         year: date[0],
-        by: byline
+        by: byline,
+        link:url
     }
     const handleClick = ()=>{
         

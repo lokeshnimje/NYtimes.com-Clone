@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { InputBase, IconButton } from "@material-ui/core"
 import { makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
-import { fetchData } from "../Redux/searchedData/action"
+import { fetchNewsData } from "../Redux/searchedData/action"
 import { useDispatch, useSelector } from "react-redux"
 const  Wrapper = styled.div`
 `
@@ -41,15 +41,15 @@ const Search = ({ types, sort }) => {
  
     const [query, setQuery ] =React.useState("")
     const classes = useStyles();
-    const { news } = useSelector( (state) => state.searchedData)
+    const { searchedNews } = useSelector( (state) => state.searchedData)
     const dispatch = useDispatch()  //action dispatcher
 
     const v = process.env.REACT_APP_NEWSFEED_API
-    console.log(v)
+    console.log(searchedNews)
     
     const handleSubmit =(e)=>{
       e.preventDefault();
-      dispatch( fetchData(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&api-key=${v}&types=${types}&sort=${sort}`) )
+      dispatch( fetchNewsData(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&api-key=${v}&types=${types}&sort=${sort}`) )
     }
     return (
         <>

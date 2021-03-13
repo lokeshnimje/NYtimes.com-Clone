@@ -1,7 +1,7 @@
 const { GET_REQUEST, GET_SUCCESS, GET_FAILURE } = require("./actionTypes")
 
 const initState={
-    news:[],
+    searchedNews:[],
     isLoading:false,
     isError:false
 }
@@ -19,7 +19,7 @@ const searchedReducer=(state=initState,{type,payload})=>{
             return {
                 ...state,
                 isError:false,
-                news:[...payload],
+                searchedNews:[...payload],
                 isLoading:false
             }
         }

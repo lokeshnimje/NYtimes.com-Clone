@@ -49,8 +49,9 @@ const SectionNews = () => {
                     <div style={{fontSize:"35px", textAlign:"left",  fontWeight:"600"}}>{name.toUpperCase()}</div> 
                     <Weather/>
                   </div>
+                  {name==="opinion"? <div style ={{ borderTop:'3px solid #ddd', padding:'1px', borderBottom:'1px solid #ddd'}}></div>: null}
+                  {(name === "opinion" && article)?<Container><div dangerouslySetInnerHTML={article} ></div></Container>:null}
                   <div style ={{ borderTop:'3px solid #ddd', padding:'1px', borderBottom:'1px solid #ddd'}}></div>
-                  {article?<Container><div dangerouslySetInnerHTML={article} ></div></Container>:null}
                   {news && <Section_popular data = {news} />}
                   { <Section_latestNews data = {news}/> }
             </div>

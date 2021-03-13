@@ -125,7 +125,7 @@ function LoginPage() {
       const newData = response.find((item)=>item.email == values.email && item.pass == values.password)    
       // console.log(data[0].email)  
       if(newData){
-        dispatch(loginSuccess())
+        dispatch(loginSuccess(newData))
         setUserType(newData.userType)
         setIsLogin(true)
         setWrong(false)

@@ -4,7 +4,8 @@ const initState={
     isAuth:false,
     isLoading:false,
     isError:false,
-    data: []
+    data: [],
+    user: {}
 }
 
 const authReducer=(state=initState,{type,payload})=>{
@@ -40,6 +41,7 @@ const authReducer=(state=initState,{type,payload})=>{
             return {
                 ...state,
                 isAuth:true,
+                user: payload
             }
         }
         case LOGIN_FAILURE:{

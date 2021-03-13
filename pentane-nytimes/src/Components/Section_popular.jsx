@@ -109,7 +109,8 @@ const Section_popular = ({data}) => {
                 day: day1[0], 
                 month:  Month(date1[1]),
                 year: date1[0],
-                by: data1.byline 
+                by: data1.byline,
+                link: data1.url
             }
 
             localStorage.setItem("pageInfo", JSON.stringify(payload))
@@ -124,7 +125,8 @@ const Section_popular = ({data}) => {
                 day: day2[0], 
                 month:  Month(date2[1]),
                 year: date2[0],
-                by: data2.byline 
+                by: data2.byline,
+                link: data2.url
             }
 
             localStorage.setItem("pageInfo", JSON.stringify(payload))
@@ -139,7 +141,8 @@ const Section_popular = ({data}) => {
                 day: day3[0],
                 month: Month(date3[1]),
                 year: date3[0],
-                by: data3.byline
+                by: data3.byline,
+                link: data3.url
             }
 
             localStorage.setItem("pageInfo", JSON.stringify(payload))
@@ -154,7 +157,8 @@ const Section_popular = ({data}) => {
                 day: day4[0],
                 month: Month(date4[1]),
                 year: date4[0],
-                by: data4.byline
+                by: data4.byline,
+                link: data4.url
             }
 
             localStorage.setItem("pageInfo", JSON.stringify(payload))

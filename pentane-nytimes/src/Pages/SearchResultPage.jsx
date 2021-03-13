@@ -42,9 +42,9 @@ justify-content: center;
 
 
 const SearchResultPage = () => {
-    const [ interest, setInterest ] =React.useState({ section:"", types:"" })
+    const [ interest, setInterest ] =React.useState({ types:"" })
     const [ selectRelevance, setSelectRelevance ] =React.useState( "" )
-    const { news } = useSelector( (state)=> state.searchedData)
+    const { searchedNews } = useSelector( (state)=> state.searchedData)
     return (
             <>
                 <OuterWrapper>
@@ -60,7 +60,7 @@ const SearchResultPage = () => {
                         <SearchIntrest  interest = { interest } setInterest = { setInterest } />
                     </div>
                 </OuterWrapper>
-                {news.length > 0 ? news.map((item, index) => <SearchedNewsCard key={ index } { ...item } />) : <h1 style={{margin:'100px 500px '}}>No Result Found</h1>}
+                {searchedNews.length > 0 ? searchedNews?.map((item, index) => <SearchedNewsCard key={ index } { ...item } />) : <h1 style={{margin:'100px 500px '}}>No Result Found</h1>}
             </>
     )
 }

@@ -22,7 +22,7 @@ const getFailure=()=>{
 
 // Can be used to fetch data in any page, be it homepage, politics,sports,etc...
 
-const fetchData=(url)=>(dispatch)=>{
+const fetchNewsData=(url)=>(dispatch)=>{
     
     dispatch(getRequest());
     axios.get(url).then( (res) =>{
@@ -36,4 +36,4 @@ const fetchData=(url)=>(dispatch)=>{
     })
 }
 
-export {fetchData};
+export {fetchNewsData};

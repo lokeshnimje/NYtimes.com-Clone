@@ -5,7 +5,7 @@ import Share from './Share';
 
 const MainArticle = () => {
     const obj = JSON.parse(localStorage.getItem("pageInfo"))
-    const {head, sub, img, cap, by, day, month, year} = obj
+    const {head, sub, img, cap, by, day, month, year, link} = obj
     console.log(obj);
     return (
         <div style = {{textAlign:"left", width:"60%", margin:"10px auto", }}>
@@ -20,7 +20,7 @@ const MainArticle = () => {
                 <div>{by}</div>
                 <div>{day} {month}, {year}</div>
             </div>
-            <div> <Share/> </div>
+            <div> <Share url = {link}/> </div>
             <div style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", width:"80%",  margin:"10px 0"}}> 
                 <div>
                     <b>A</b>t Fountain Court Chambers in central London, the senior clerk is called Alex Taylor. A trim, bald 54-year-old who favors Italian suiting, Taylor isn’t actually named Alex. Traditionally in English law, should a newly hired clerk have the same Christian name as an existing member of the staff, he’s given a new one, allegedly to avoid confusion on the telephone. During his career, Taylor has been through no fewer than three names. His birth certificate reads “Mark.” When he first got to Fountain Court in 1979, the presence of another Mark saw him renamed John. Taylor remained a John through moves to two other chambers. Upon returning to Fountain Court, in 2008, he became Alex. At home his wife still calls him Mark.
