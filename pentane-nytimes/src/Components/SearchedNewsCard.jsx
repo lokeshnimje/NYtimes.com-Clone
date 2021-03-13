@@ -27,7 +27,7 @@ const SearchedNewsCard = ({abstract, byline, section_name, headline, multimedia,
          }
          else 
          {
-             return new Intl.DateTimeFormat('en-US',{month:'long'}).format(new Date(pub_date))+' '+ new Date(pub_date).getDate()
+             return new Intl.DateTimeFormat('en-US',{month:'long'}).format(new Date(pub_date))+' '+ new Date(pub_date).getDate()+" "+new Date(pub_date).getFullYear()
          }
         
     }
