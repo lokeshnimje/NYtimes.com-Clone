@@ -5,18 +5,20 @@ import axios from 'axios'
 
 
 const HomePage = () => {
-
+    const [isLoading, setLoading] = React.useState(false)
     const [data, setData ] = React.useState([])
 
     React.useEffect(()=>{
-        
+        setLoading(true)
         axios.get(`https://api.nytimes.com/svc/topstories/v2/home.json?api-key=veI5P7qVillAxFUNbchxr8ijwFGG3M0z`)
         .then((res)=>{
             setData(res.data.results)
+            setLoading(false)
         })
     }, [])    
 
     return (
+        (isLoading)?( <div style ={{margin:"10px 40%",}}> <img style ={{margin:"auto",}} width="300px" height="300px" src="https://www.bluechipexterminating.com/wp-content/uploads/2020/02/loading-gif-png-5.gif" alt="loading"/> </div>  ):(
         <div style = {{marginTop:"50px" }} >
             <div>
                 <HomePageBanner data = {data}/>            
@@ -39,6 +41,7 @@ const HomePage = () => {
             {/* {new Array(10).fill(0).map((el,index) => index > 5 ? <>asddds</> : null) } */}
            
         </div>
+        )
     )
 }
 

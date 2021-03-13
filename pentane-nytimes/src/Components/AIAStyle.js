@@ -8,13 +8,17 @@ export const useStyles=makeStyles(()=>({
         textAlign:"left"
     },
     subTitle:{
-        color:"gray",
+        color:"teal",
         textAlign:"left",
         fontSize:"14px",
     },
+    imageBox:{
+        width:"90%",
+        height:"85%",
+    },
     image:{
-        width:"100%",
-        height:"90%",
+        width:"90%",
+        height:"85%",
     },
     articleCover:{
         margin:"0px 0px 20px",

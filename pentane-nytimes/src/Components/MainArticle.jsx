@@ -1,5 +1,7 @@
 import React from 'react'
 import Advertisement from './AdvertisementSmall';
+import Comment from './Comment';
+import Share from './Share';
 
 const MainArticle = () => {
     const obj = JSON.parse(localStorage.getItem("pageInfo"))
@@ -18,7 +20,7 @@ const MainArticle = () => {
                 <div>{by}</div>
                 <div>{day} {month}, {year}</div>
             </div>
-
+            <div> <Share/> </div>
             <div style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", width:"80%",  margin:"10px 0"}}> 
                 <div>
                     <b>A</b>t Fountain Court Chambers in central London, the senior clerk is called Alex Taylor. A trim, bald 54-year-old who favors Italian suiting, Taylor isn’t actually named Alex. Traditionally in English law, should a newly hired clerk have the same Christian name as an existing member of the staff, he’s given a new one, allegedly to avoid confusion on the telephone. During his career, Taylor has been through no fewer than three names. His birth certificate reads “Mark.” When he first got to Fountain Court in 1979, the presence of another Mark saw him renamed John. Taylor remained a John through moves to two other chambers. Upon returning to Fountain Court, in 2008, he became Alex. At home his wife still calls him Mark.
@@ -38,6 +40,10 @@ const MainArticle = () => {
                     Fountain Court is among the most prestigious groups in London practicing commercial law, the branch that deals with business disputes. One day last summer, Taylor gave a tour of the premises, just north of the River Thames. The waiting room had been recently remodeled, with upholstered sofas, low tables, and asymmetrically hung pictures that called to mind an upmarket hotel. Taylor explained that the barristers had tried to walk an aesthetic line between modernity and the heritage that clients expect of people who are sometimes still required to wear a horsehair wig to court. Barristers are self-employed; chambers are a traditional way for them to band together to share expenses, though not profits. The highest-ranking members, barristers who’ve achieved the rank of Queen’s Counsel, are nicknamed silks, after the plush material used to make their robes. But even the silks cannot practice without the services of clerks, who operate from a designated room in each chambers, matching the ability and availability of barristers to solicitors in need.
                 </div>
 
+            </div>
+
+            <div>
+                <Comment/>
             </div>
         </div>
     )

@@ -8,13 +8,16 @@ const AIA=({ data3, data2, data, imgUrl, imgCaption})=>{
     return (
         <>
             <Container>
-                <Grid container spacing={4}>
-                    <Grid item sm={3} xs={4}>
+                <Grid container spacing={2}>
+                    <Grid item sm={3} xs={4} >
                         <div className={classes.title}> {data?.title } </div>
                         <div className={classes.subTitle}> { data?.abstract } </div>
                     </Grid>
                     <Grid item sm={5} xs={8}>
+                        <div className = {classes.imageBox}>
                         <img alt="" className={classes.image} src=  {classes.image} src={imgUrl } ></img>
+
+                        </div>
                         <div className={classes.imageTitle}>{imgCaption}</div>
                     </Grid>
                     <Grid item sm={4} xs={12}>

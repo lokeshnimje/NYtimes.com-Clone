@@ -47,19 +47,19 @@ const SearchResultPage = () => {
     const { news } = useSelector( (state)=> state.searchedData)
     return (
             <>
-                            <OuterWrapper>
-                  <InnerWrapper>
-                    <Search types = { interest.types } sort ={ selectRelevance } />
-                    <select  onClick ={ (e) => setSelectRelevance( e.target.value ) } className="select">
-                        <option value="">Sort by Relevance</option>
-                        <option value="newest">Sort by Newest</option>
-                        <option value="oldest">Sort by Oldest</option>
-                    </select>
-                </InnerWrapper>
-                <div className="intrestSearch">
-                    <SearchIntrest  interest = { interest } setInterest = { setInterest } />
-                </div>
-            </OuterWrapper>
+                <OuterWrapper>
+                    <InnerWrapper>
+                        <Search types = { interest.types } sort ={ selectRelevance } />
+                        <select  onClick ={ (e) => setSelectRelevance( e.target.value ) } className="select">
+                            <option value="">Sort by Relevance</option>
+                            <option value="newest">Sort by Newest</option>
+                            <option value="oldest">Sort by Oldest</option>
+                        </select>
+                    </InnerWrapper>
+                    <div className="intrestSearch">
+                        <SearchIntrest  interest = { interest } setInterest = { setInterest } />
+                    </div>
+                </OuterWrapper>
                 {news.length > 0 ? news.map((item, index) => <SearchedNewsCard key={ index } { ...item } />) : <h1 style={{margin:'100px 500px '}}>No Result Found</h1>}
             </>
     )

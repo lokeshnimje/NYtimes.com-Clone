@@ -15,7 +15,7 @@ const Weather = () => {
             
         })
     }
-    
+
     const options = {
         method: 'GET',
         url: 'https://api.weatherbit.io/v2.0/current',
@@ -30,6 +30,7 @@ const Weather = () => {
             console.error(error);
         });
     }
+    
     const {data} = weather
     // console.log(data);
         
