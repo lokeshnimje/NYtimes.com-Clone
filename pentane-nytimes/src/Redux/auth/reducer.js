@@ -1,4 +1,4 @@
-const { AUTH_REQUEST, AUTH_SUCCESS, AUTH_FAILURE } = require("./actionTypes")
+const { AUTH_REQUEST, AUTH_SUCCESS, AUTH_FAILURE,LOGOUT,LOGIN_REQUEST,LOGIN_SUCCESS,LOGIN_FAILURE } = require("./actionTypes")
 
 const initState={
     isAuth:false,
@@ -20,7 +20,6 @@ const authReducer=(state=initState,{type,payload})=>{
             return {
                 ...state,
                 isError:false,
-                isAuth:true,
                 isLoading:false,
                 data: payload
             }
@@ -32,6 +31,30 @@ const authReducer=(state=initState,{type,payload})=>{
                 isError:true
             }
         }
+        case LOGIN_REQUEST:{
+            return {
+                ...state,
+            }
+        }
+        case LOGIN_SUCCESS:{
+            return {
+                ...state,
+                isAuth:true,
+            }
+        }
+        case LOGIN_FAILURE:{
+            return {
+                ...state,
+                isError:true
+            }
+        }
+        case LOGOUT:
+            return {
+                ...state,
+                isError:false,
+                isAuth:false,
+                isLoading:false,
+            }
         default:
             return state;
     }

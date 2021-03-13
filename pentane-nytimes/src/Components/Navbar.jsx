@@ -9,6 +9,9 @@ import SideMenuDrawer from './SideMenuDrawer';
 import { useParams } from 'react-router';
 import {useLocation, useHistory} from "react-router"
 import {FaSearch } from "react-icons/fa";
+import { useDispatch, useSelector } from 'react-redux' 
+import {logout} from "../Redux/auth/action"
+import {Link} from "react-router-dom"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,16 +28,19 @@ const useStyles = makeStyles((theme) => ({
   },
   login : {
     backgroundColor:"#567B95",
+    
+  },
+  loginLink:{
+    fontSize:"12px",
     color:"white",
     fontWeight:"bold",
-    fontSize:"12px",
+    textDecoration:"none",
   },
-  
   navbar : {
       backgroundColor:"white",
       color: "black",
       padding:"0 8%",
-  }
+  },
 }));
 
 export default function Navbar() {
@@ -42,9 +48,16 @@ export default function Navbar() {
   const {name} = useParams()
   const location = useLocation(window.search)
   const history = useHistory(location)
-  const handleLogin = () => {
-    history.push('/login')
+  const isAuth = useSelector (state => state.auth.isAuth)
+  console.log(isAuth)
+  // const isAuth = true
+  const dispatch = useDispatch()
+  const logout_user = () => {
+      dispatch(logout())
   }
+  // const handleLogin = () => {
+  //   history.push('/login')
+  // }
   return (
     <div className={classes.root}>
       <AppBar className={classes.navbar} position="static">
@@ -59,7 +72,9 @@ export default function Navbar() {
           <Typography variant="h6" className={classes.title}>
             <img style = {{ margin:"auto"}} src="/title.png" alt="title" width="250px"/>
           </Typography>
-          <Button className={classes.login} onClick={handleLogin} variant="text" size="small">Log in</Button>
+          <Button className={classes.login} variant="text" size="small">
+          {isAuth ? <Link className={classes.loginLink} onClick={logout_user}>LOGOUT</Link> :<Link  className={classes.loginLink} to='/login'>LOGIN</Link>}
+          </Button>
         </Toolbar>
       </AppBar>
     </div>
