@@ -4,7 +4,7 @@
 
 ------------------- **INTRODUCTION** ---------------------- 
 
-The project statement given to us was to create a  dynamic clone of Toggle Track web app. Toggl Track is a simple & powerful time tracker that helps you learn how much your time is worth. With this time tracking app you'll be able to start tracking your hours and manage your hours with just one click.
+The project statement given to us was to create a  dynamic clone of The New York Times web app. It is an American daily newspaper based in New York City with a worldwide readership. 
 
 
 ------------------- **TEAM MEMBERS** --------------------
