@@ -11,7 +11,7 @@ import { Link, Redirect } from "react-router-dom";
 import { LoginBottom } from "../Components/LoginBottom";
 import { LoginNavbar } from "../Components/LoginNavbar";
 import {useDispatch, useSelector} from "react-redux"
-import {authentication,authRequest,authSuccess,authFailure} from "../Redux/auth/action"
+import {authentication,authRequest,loginSuccess,loginFailure} from "../Redux/auth/action"
 import axios from "axios"
 //Lable Remember me for checkbox
 const Lable = styled.p`
@@ -92,6 +92,7 @@ function LoginPage() {
   const dispatch = useDispatch()
   const classes = useStyles();
   const response = useSelector(state=> state.auth.data)
+  const isAuth = useSelector(state=> state.auth.isAuth)
   // console.log(response)
   const [values, setValues] = React.useState({
     email: "",
@@ -111,7 +112,7 @@ function LoginPage() {
     event.preventDefault();
   };
 
-  const [isAuth, setIsAuth] = React.useState(false)
+  const [isLogin, setIsLogin] = React.useState(false)
   const [ wrong, setWrong] = React.useState(false)
   const [userType, setUserType] = React.useState("")
     React.useEffect(()=>{
@@ -124,21 +125,23 @@ function LoginPage() {
       const newData = response.find((item)=>item.email == values.email && item.pass == values.password)    
       // console.log(data[0].email)  
       if(newData){
+        dispatch(loginSuccess())
         setUserType(newData.userType)
-        setIsAuth(true)
+        setIsLogin(true)
         setWrong(false)
       } else {
+        dispatch(loginFailure())
       setWrong(true)
-      setIsAuth(false)
+      setIsLogin(false)
     }
   };
   // console.log(userType)
-  // console.log(isAuth)
+  console.log(isAuth)
   const {email, password,showPassword} = values
   return (
     <>
-      {wrong ? <h4 style={{color:"red"}}>Invalid Credentials, if you have not registered then click on <span style={{color:"black"}}>Create one</span> to register</h4>: null}
-      {isAuth && <h3 style={{color:"green"}}>You are successfully Logged in</h3>}
+      {wrong ? <h4 style={{color:"red", margin:"auto"}}>Invalid Credentials, if you have not registered then click on <span style={{color:"black"}}>Create one</span> to register</h4>: null}
+      {/* {isLogin && <h3 style={{color:"green", margin:"auto"}}>You are successfully Logged in</h3>} */}
       <div className={classes.root}>
         <form onSubmit={handleSubmit}>
             <label className={classes.lables} htmlFor="">

@@ -1,5 +1,5 @@
 import axios from 'axios';
-const { AUTH_REQUEST, AUTH_SUCCESS, AUTH_FAILURE } = require("./actionTypes");
+const { AUTH_REQUEST, AUTH_SUCCESS, AUTH_FAILURE,LOGOUT, LOGIN_REQUEST, LOGIN_FAILURE, LOGIN_SUCCESS } = require("./actionTypes");
 
 const authRequest=()=>{
     return {
@@ -20,6 +20,29 @@ const authFailure=()=>{
     }
 }
 
+const loginRequest=()=>{
+    return {
+        type:LOGIN_REQUEST
+    }
+}
+
+const loginSuccess=(payload)=>{
+    return {
+        type:LOGIN_SUCCESS,
+        payload
+    }
+}
+
+const loginFailure=()=>{
+    return {
+        type:LOGIN_FAILURE
+    }
+}
+export const logout = () => {
+    return ({
+        type: LOGOUT
+    })
+}
 const authentication=(payload)=>(dispatch)=>{
     dispatch(authRequest());
    axios.get("http://localhost:3000/users")
@@ -27,4 +50,4 @@ const authentication=(payload)=>(dispatch)=>{
     .catch(err=> dispatch(authFailure()))
 }
 
-export {authentication,authRequest,authSuccess,authFailure}
+export {authentication,authRequest,authSuccess,authFailure, loginFailure,  loginSuccess, loginRequest}
