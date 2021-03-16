@@ -1,4 +1,4 @@
-# Toggl-Track-Unit3-Project
+# A project on cloning of "The New York Times" website
 ![Toggl Track](https://static01.nyt.com/vi-assets/images/share/1200x675_nameplate.png)
 
 
