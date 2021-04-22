@@ -6,7 +6,7 @@ import { fetchSectionData } from "../Redux/getData/action"
 import { useDispatch, useSelector } from "react-redux"
 import Weather from './Weather'
 import { Container } from '@material-ui/core'
-
+import Error from '../Utils/10.svg'
 
 const SectionNews = () => {
 
@@ -39,7 +39,7 @@ const SectionNews = () => {
     )
   } else if (isError) {
     return (
-      <div> something went wrong</div>
+      <div > <img src={Error} alt="404 error" width = "500px" height = "400px"/></div>
     )
   } else if (news) {
         return (

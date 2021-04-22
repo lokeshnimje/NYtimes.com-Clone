@@ -32,22 +32,19 @@ export default function SideMenuDrawer(){
   const category2 = ['Arts','Books','Style','Food','Travel','Magazine','T Magzine','Real Estate','Video','The Upshot']
   
   const toggleDrawer = (anchor, open) => (event) => {
-    if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-      return;
-    }
-
+   
     setState({ ...state, [anchor]: open });
   };
  
   const list = (anchor) => (
-    <div
-        className={classes.fullList}  onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
+    <div className={classes.fullList}
+         onClick={toggleDrawer(anchor, false)}
     >
+
       <List>
         {category1.map((text) => (
           <ListItem className={classes.menu} button key={text}>
-          <NavLink style={{textDecoration:"none", color:"black"}} to = {`/Articles/${text.toLowerCase().replace(/[^\w\s]/gi, "")}`}> <ListItemText  primary={text} /> </NavLink> 
+            <NavLink style={{textDecoration:"none", color:"black"}} to = {`/Articles/${text.toLowerCase().replace(/[^\w\s]/gi, "")}`}> <ListItemText  primary={text} /> </NavLink> 
           </ListItem>
         ))}
       </List>

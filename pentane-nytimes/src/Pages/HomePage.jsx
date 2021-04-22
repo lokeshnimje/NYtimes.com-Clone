@@ -4,7 +4,7 @@ import AIA from "../Components/AIA"
 import axios from 'axios'
 
 
-const HomePage = () => {
+const HomePage = () => {    
     const [isLoading, setLoading] = React.useState(false)
     const [data, setData ] = React.useState([])
 
