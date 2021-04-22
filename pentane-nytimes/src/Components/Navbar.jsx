@@ -72,7 +72,7 @@ export default function Navbar() {
             <h4>{(name)? name.toUpperCase(): ""}</h4>
           </Typography>
           <Typography variant="h6" className={classes.title}>
-            <img style = {{ margin:"auto"}} src="/title.png" alt="title" width="250px"  onClick = {handleHome}/>
+            <img style = {{ margin:"auto"}} src="title.png" alt="title" width="250px"  onClick = {handleHome}/>
           </Typography>
           <Button className={classes.login} variant="text" size="small">
           {isAuth ? <Link className={classes.loginLink} onClick={logout_user}>LOGOUT</Link> :<Link  className={classes.loginLink} to='/login'>LOGIN</Link>}
