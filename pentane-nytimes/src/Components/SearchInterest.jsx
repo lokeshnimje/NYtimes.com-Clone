@@ -87,8 +87,6 @@ dropdown3: {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [ id, setId ] =React.useState("");
-
-  const [ selection, setSelection ] =React.useState()
   
   const handleClick = (e) => {
       setId(e.currentTarget.id)

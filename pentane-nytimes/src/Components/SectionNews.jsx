@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router'
-import Section_latestNews from './Section_latestNews'
-import Section_popular from './Section_popular'
+import SECTION_LATEST_NEWS from './Section_latestNews'
+import SECTION_POPULAR from './Section_popular'
 import { fetchSectionData } from "../Redux/getData/action"
 import { useDispatch, useSelector } from "react-redux"
 import Weather from './Weather'
@@ -16,9 +16,10 @@ const SectionNews = () => {
   const {isError} = useSelector( (state) => state.getData)
   const dispatch = useDispatch()  //action dispatcher
   const [article,setArticle]=React.useState("");
-  
+  const key = process.env.REACT_APP_NEWSFEED_API
+  console.log(key);
   const getNewsData =()=>{
-    const url = `https://api.nytimes.com/svc/topstories/v2/${name}.json?api-key=FIggacgleeORGRG2RudGPU94oYeKpAeO`
+    const url = `https://api.nytimes.com/svc/topstories/v2/${name}.json?api-key=${key}`
     dispatch( fetchSectionData(url) )
   }
 
@@ -52,8 +53,8 @@ const SectionNews = () => {
                   {name==="opinion"? <div style ={{ borderTop:'3px solid #ddd', padding:'1px', borderBottom:'1px solid #ddd'}}></div>: null}
                   {(name === "opinion" && article)?<Container><div dangerouslySetInnerHTML={article} ></div></Container>:null}
                   <div style ={{ borderTop:'3px solid #ddd', padding:'1px', borderBottom:'1px solid #ddd'}}></div>
-                  {news && <Section_popular data = {news} />}
-                  { <Section_latestNews data = {news}/> }
+                  {news && <SECTION_POPULAR data = {news} />}
+                  { <SECTION_LATEST_NEWS data = {news}/> }
             </div>
           </div>
         )

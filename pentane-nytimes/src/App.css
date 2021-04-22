@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader&display=swap');
 .App {
   text-align: center;
   width: 100%;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Newsreader', serif;
+  background-color: #fbfbf8;
+  line-height: 1.3;
+  color: #333333;
 }
 
 .App-logo {

@@ -1,7 +1,6 @@
 import React from 'react';
 import {Grid, Container} from "@material-ui/core";
 import {useStyles} from "./AIAStyle";
-import axios from 'axios'
 
 const AIA=({ data3, data2, data, imgUrl, imgCaption})=>{
     const classes=useStyles();
@@ -15,8 +14,7 @@ const AIA=({ data3, data2, data, imgUrl, imgCaption})=>{
                     </Grid>
                     <Grid item sm={5} xs={8}>
                         <div className = {classes.imageBox}>
-                        <img alt="" className={classes.image} src=  {classes.image} src={imgUrl } ></img>
-
+                            <img alt="" className={classes.image} src={imgUrl } ></img>
                         </div>
                         <div className={classes.imageTitle}>{imgCaption}</div>
                     </Grid>

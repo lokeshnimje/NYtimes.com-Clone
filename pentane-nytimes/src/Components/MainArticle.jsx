@@ -1,5 +1,4 @@
 import React from 'react'
-import Advertisement from './AdvertisementSmall';
 import Comment from './Comment';
 import Share from './Share';
 

@@ -75,7 +75,7 @@ const RegisterationPage = () => {
         .then(res=> setIsRegistered(true))
         .catch(err => setIsError(true))
     }
-    const {fname, lname, email, pass, userType, savedArticle} = state
+    const {fname, lname, email, pass, userType} = state
     return (
         <>
         {/* reusing loginNavabr here */}

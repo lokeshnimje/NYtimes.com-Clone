@@ -25,7 +25,7 @@ const Section_popular = ({data}) => {
         const history = useHistory(location)
        
     if (data.length>0) {
-        console.log(data);
+
         const data1 = data[0]
         const data2 = data[1]
         const data3 = data[2]

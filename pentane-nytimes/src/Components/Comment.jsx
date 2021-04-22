@@ -10,9 +10,7 @@ const Comment = () => {
     const [comm, setComm] = useState([]);
     const [comment, setComment] = useState("");
     const [color, setColor] = useState("");
-    // const [user, setUser] = React.useState("Rakesh")
     const {user, isAuth} = useSelector(state => state.auth)
-    // const [auth, setAuth] = React.useState(false)
     const handleLogin = () => {
     history.push("/login")
     }
@@ -30,7 +28,7 @@ const Comment = () => {
     }
     }
     const handleChange = () => {
-        color("skyblue")
+        setColor("skyblue")
     }
     const handleClick = (e) => {
         let a =  e.target.value

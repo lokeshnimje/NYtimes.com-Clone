@@ -4,7 +4,34 @@ import styleSheet from "./Css/SearchedNewsCard.module.css"
 
 const SearchedNewsCard = ({abstract, byline, section_name, headline, multimedia, pub_date }) => {
 
-    // const timeFunc = () => {
+    return (
+        <div className={ styleSheet.card}>
+            <div className={ styleSheet.timeAgo}> { pub_date}  </div>
+            <div className={ styleSheet.contentDiv}>
+                    
+                    <span style={ {width:'470px'}}>
+                        <p className={ styleSheet.newsType}> { section_name } </p>
+                        <h4 className={ styleSheet.titleH4}> { abstract } </h4>
+                        {/* <p> { headline.main } </p> */}
+                        
+                        <p className={ styleSheet.newsAuthor }> {byline.original} </p>
+                    </span>
+
+                   {/* { multimedia && multimedia.length > 0 ?  <img width="205px" height="136px" src={ 'https://static01.nyt.com/'+multimedia[1]?.url }  alt=""/> : null } */}
+
+            </div>
+        </div>
+    )
+}
+
+export { SearchedNewsCard }
+
+
+
+
+
+
+  // const timeFunc = () => {
     //     let convertingInLocalTime = new Date(pub_date.toString() ).toISOString()
     //     let timeNow = Date.parse( new Date().toISOString() )
     //      let ms = timeNow - Date.parse( convertingInLocalTime )
@@ -30,25 +57,3 @@ const SearchedNewsCard = ({abstract, byline, section_name, headline, multimedia,
     //      }
         
     // }
-
-    return (
-        <div className={ styleSheet.card}>
-            <div className={ styleSheet.timeAgo}> { pub_date}  </div>
-            <div className={ styleSheet.contentDiv}>
-                    
-                    <span style={ {width:'470px'}}>
-                        <p className={ styleSheet.newsType}> { section_name } </p>
-                        <h4 className={ styleSheet.titleH4}> { abstract } </h4>
-                        {/* <p> { headline.main } </p> */}
-                        
-                        <p className={ styleSheet.newsAuthor }> {byline.original} </p>
-                    </span>
-
-                   { multimedia.length > 0 ?  <img width="205px" height="136px" src={ 'https://static01.nyt.com/'+multimedia[1]?.url }  alt=""/> : null }
-
-            </div>
-        </div>
-    )
-}
-
-export { SearchedNewsCard }

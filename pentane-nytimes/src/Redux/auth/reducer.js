@@ -1,6 +1,6 @@
 const { AUTH_REQUEST, AUTH_SUCCESS, AUTH_FAILURE,LOGOUT,LOGIN_REQUEST,LOGIN_SUCCESS,LOGIN_FAILURE } = require("./actionTypes")
 
-const initState={
+const initState= {
     isAuth:false,
     isLoading:false,
     isError:false,

@@ -1,8 +1,8 @@
 import React from 'react'
 import Footer from './footer/FooterIndex'   // FooterIndex.js from Components
-import { SiNewyorktimes } from "react-icons/si"
-
-
+import { MdSubscriptions, MdGames} from "react-icons/md";
+import { BsNewspaper } from "react-icons/bs";
+import { GiCook } from "react-icons/gi";
 export function FooterContainer() {
 
 return (<div>
@@ -105,15 +105,15 @@ return (<div>
                         
                        <Footer.Column>
                             <span style={{ marginBottom:'-25px',marginTop:'-25px'}}>
-                                 <Footer.Link2 ><h3> <img style={{marginRight:'10px'}} src="home-delivery.png" alt="home delivery"/> Home Delivery </h3> </Footer.Link2>
+                                 <Footer.Link2 ><h3> <BsNewspaper style={{marginRight:'10px'}} /> Home Delivery </h3> </Footer.Link2>
                             </span>
-                                <span style={{ marginBottom:'-25px'}}> <Footer.Link2 > <h3><img style={{marginRight:'10px'}}  width="15px" height="20px" src="cooking.png" alt="cooking"/>Subscription</h3></Footer.Link2></span>
+                                <span style={{ marginBottom:'-25px'}}> <Footer.Link2 > <h3><MdSubscriptions style={{marginRight:'10px'}} />Subscription</h3></Footer.Link2></span>
 
                             <span style={{ marginBottom:'-25px'}}>
-                                <Footer.Link2 > <h3><img style={{marginRight:'10px'}}  src="new-york-time-logo.png" alt="new york time logo"/> Games</h3></Footer.Link2>
+                                <Footer.Link2 > <h3><MdGames style={{marginRight:'10px'}} /> Games</h3></Footer.Link2>
                             </span>
                             <span style={{ marginBottom:'-25px'}}>
-                                <Footer.Link2 > <h3><img style={{marginRight:'10px'}}  width="15px" height="20px" src="cooking.png" alt="cooking"/> Cooking</h3></Footer.Link2>
+                                <Footer.Link2 > <h3><GiCook style={{marginRight:'10px'}} /> Cooking</h3></Footer.Link2>
                             </span>
                             
 

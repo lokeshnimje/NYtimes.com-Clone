@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import Advertisement from './AdvertisementSmall'
-import Section_latestNewsCard from './Section_latestNewsCard'
-import Section_latestSearch from './Section_latestSearch'
+import SECTION_LATEST_NEWS_CARD from './Section_latestNewsCard'
+import SECTION_LATEST_SEARCH from './Section_latestSearch'
 
 
 const Section_latestNews = ({data}) => {
@@ -37,11 +37,6 @@ const Section_latestNews = ({data}) => {
     display:flex;
 
   ` 
-
-  const secondHalf = styled.div`
-    display:flex;
-    justifyContent:
-  `
   // console.log(data);
   
 
@@ -53,7 +48,7 @@ const Section_latestNews = ({data}) => {
             </Design>
             <div style = {{display:"flex", justifyContent:"space-evenly"}}>              
                 <div style = {{margin:"0",  width:"70%", padding:"0"}}>
-                    {isTrue ? (data?.map((item)=> <Section_latestNewsCard {...item}/>) ): <Section_latestSearch/> }
+                    {isTrue ? (data?.map((item)=> <SECTION_LATEST_NEWS_CARD {...item}/>) ): <SECTION_LATEST_SEARCH/> }
                 </div>
                 <div>
                 <Advertisement/>

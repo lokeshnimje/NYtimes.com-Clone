@@ -1,18 +1,13 @@
 import React from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Input from "@material-ui/core/Input";
-import OutlinedInput from "@material-ui/core/OutlinedInput";
 import InputAdornment from "@material-ui/core/InputAdornment";
-import FormControl from "@material-ui/core/FormControl";
 import Button from "@material-ui/core/Button";
 import { Checkbox, FormControlLabel } from "@material-ui/core";
 import styled from "styled-components";
 import { Link, Redirect } from "react-router-dom";
-import { LoginBottom } from "../Components/LoginBottom";
-import { LoginNavbar } from "../Components/LoginNavbar";
 import {useDispatch, useSelector} from "react-redux"
-import {authentication,authRequest,loginSuccess,loginFailure} from "../Redux/auth/action"
-import axios from "axios"
+import {authentication,loginSuccess,loginFailure} from "../Redux/auth/action"
 //Lable Remember me for checkbox
 const Lable = styled.p`
   font-size: 14px;
@@ -112,31 +107,29 @@ function LoginPage() {
     event.preventDefault();
   };
 
-  const [isLogin, setIsLogin] = React.useState(false)
   const [ wrong, setWrong] = React.useState(false)
   const [userType, setUserType] = React.useState("")
-    React.useEffect(()=>{
-      dispatch(authentication())
-      // setData(response)
-    },[])
+
+  React.useEffect(()=>{
+    dispatch(authentication())
+  },[])
     
-    const handleSubmit = (event) => {
+  const handleSubmit = (event) => {
       event.preventDefault();
-      const newData = response.find((item)=>item.email == values.email && item.pass == values.password)    
+      const newData = response.find((item)=>item.email === values.email && item.pass === values.password)    
       // console.log(data[0].email)  
       if(newData){
         dispatch(loginSuccess(newData))
         setUserType(newData.userType)
-        setIsLogin(true)
+
         setWrong(false)
       } else {
         dispatch(loginFailure())
       setWrong(true)
-      setIsLogin(false)
     }
   };
   // console.log(userType)
-  console.log(isAuth)
+  // console.log(isAuth)
   const {email, password,showPassword} = values
   return (
     <>
@@ -204,16 +197,16 @@ function LoginPage() {
         </form>
 
         <p>
-          Don'nt have a Times account?{" "}
+          Don't have a Times account?{" "}
           <Link to="/registration" className={classes.forgotLink}>
             <b>Create one</b>
           </Link>{" "}
         </p>
       </div>
       {/*  */}
-      {isAuth && userType=="Admin"?<Redirect to="/admin"/>:isAuth?<Redirect to="/"/>:null}
+      {isAuth && userType==="Admin"?<Redirect to="/admin"/>:isAuth?<Redirect to="/"/>:null}
     </>
-  );
+  );  
 }
 
 export { LoginPage };

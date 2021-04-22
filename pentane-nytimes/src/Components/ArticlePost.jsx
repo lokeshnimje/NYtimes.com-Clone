@@ -7,7 +7,6 @@ import draftToHtml from 'draftjs-to-html';
 const ArticlePost=()=>{
 
     const [editorState,setEditorState]=React.useState("")    
-    const [article,setArticle]=React.useState("");
     const [postStatus,setPostStatus]=React.useState(false);
     const [isPosting,setIsPosting]=React.useState(false);
     const onEditorStateChange = (editorState) => {
@@ -38,7 +37,6 @@ const ArticlePost=()=>{
             {postStatus?<h3 style={{color:"green"}}>Posted Successfully!</h3>:null}
         </Container>
         
-        {/* {article?<Container><div dangerouslySetInnerHTML={article} ></div></Container>:null} */}
             
         </>
     )
