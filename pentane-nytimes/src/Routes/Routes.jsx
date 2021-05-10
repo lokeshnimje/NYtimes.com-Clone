@@ -14,38 +14,38 @@ const Routes = () => {
             <Navbar/>
             <Switch>
 
-                <Route exact path="/">
+                <Route exact path="/Pentane/">
                     <HomePage/>
                 </Route>
-                <Route exact path="/Home">
+                <Route exact path="/Pentane/Home">
                     <HomePage />   
                 </Route>
 
-                <Route exact path = "/registeration">
+                <Route exact path = "/Pentane/registeration">
                     <RegisterationPage />
                 </Route>
 
-                <Route exact path = "/login">
+                <Route exact path = "/Pentane/login">
                         <LoginPage />
                 </Route>
                
-                <Route path = "/search">
+                <Route path = "/Pentane/search">
                     <SearchResultPage />
                 </Route>
 
-                <Route exact path = "/registration">
+                <Route exact path = "/Pentane/registration">
                     <RegisterationPage/>
                 </Route>
 
-                <Route exact path = "/Articles/:name">
+                <Route exact path = "/Pentane/Articles/:name">
                     <SectionNews/>
                 </Route>
 
-                <Route exact path = "/news/:title">
+                <Route exact path = "/Pentane/news/:title">
                     <MainArticle/>
                 </Route>
 
-                <Route exact path="/admin">
+                <Route exact path="/Pentane/admin">
                     <AdminPage/>
                 </Route>
 
