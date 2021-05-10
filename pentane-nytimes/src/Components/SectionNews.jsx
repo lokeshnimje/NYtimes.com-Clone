@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from "react-redux"
 import Weather from './Weather'
 import { Container } from '@material-ui/core'
 import Error from '../Utils/10.svg'
+import dotenv from 'dotenv';
+dotenv.config();
 
 const SectionNews = () => {
 
@@ -16,7 +18,8 @@ const SectionNews = () => {
   const {isError} = useSelector( (state) => state.getData)
   const dispatch = useDispatch()  //action dispatcher
   const [article,setArticle]=React.useState("");
-  const key = process.env.REACT_APP_NEWSFEED_API
+  const key = process.env.REACT_APP_NEWSFEED_API;
+  console.log(process.env,'env')
   console.log(key);
   const getNewsData =()=>{
     const url = `https://api.nytimes.com/svc/topstories/v2/${name}.json?api-key=${key}`
@@ -33,15 +36,16 @@ const SectionNews = () => {
 
  
 
-  if (isLoading) {
-    return (
-      <div style ={{margin:"10px 40%",}}> <img style ={{margin:"auto",}} width="300px" height="300px" src="https://www.bluechipexterminating.com/wp-content/uploads/2020/02/loading-gif-png-5.gif" alt="loading"/> </div>
-    )
-  } else if (isError) {
-    return (
-      <div > <img src={Error} alt="404 error" width = "500px" height = "400px"/></div>
-    )
-  } else if (news) {
+  // if (isLoading) {
+  //   return (
+  //     <div style ={{margin:"10px 40%",}}> <img style ={{margin:"auto",}} width="300px" height="300px" src="https://www.bluechipexterminating.com/wp-content/uploads/2020/02/loading-gif-png-5.gif" alt="loading"/> </div>
+  //   )
+  // } else if (isError) {
+  //   return (
+  //     <div > <img src={Error} alt="404 error" width = "500px" height = "400px"/></div>
+  //   )
+  // } else 
+  if (news) {
         return (
           <div>
             

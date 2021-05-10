@@ -17,9 +17,6 @@ const Routes = () => {
                 <Route exact path="/">
                     <HomePage/>
                 </Route>
-                <Route exact path="Pentane/">
-                    <HomePage/>
-                </Route>
                 <Route exact path="/Home">
                     <HomePage />   
                 </Route>

@@ -3,6 +3,7 @@ import HomePageBanner from '../Components/HomePageBanner'
 import AIA from "../Components/AIA"
 import axios from 'axios'
 
+const key = process.env.REACT_APP_NEWSFEED_API;
 
 const HomePage = () => {    
     const [isLoading, setLoading] = React.useState(false)
@@ -10,7 +11,7 @@ const HomePage = () => {
 
     React.useEffect(()=>{
         setLoading(true)
-        axios.get(`https://api.nytimes.com/svc/topstories/v2/home.json?api-key=veI5P7qVillAxFUNbchxr8ijwFGG3M0z`)
+        axios.get(`https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${key}`)
         .then((res)=>{
             setData(res.data.results)
             setLoading(false)
