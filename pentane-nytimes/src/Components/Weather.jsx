@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from "axios";
 
+const weather_key = process.env.REACT_APP_WEATHER_KEY;
 
 const Weather = () => {
     const [lati, setLat]= React.useState("")
@@ -19,7 +20,7 @@ const Weather = () => {
     const options = {
         method: 'GET',
         url: 'https://api.weatherbit.io/v2.0/current',
-        params: {lat: lati, lon: long , key: '0abbc01b2f574ccbb75ba5d2beb66f09'},
+        params: {lat: lati, lon: long , key: weather_key},
         headers: {}
     };
 

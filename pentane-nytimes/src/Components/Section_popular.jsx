@@ -114,7 +114,7 @@ const Section_popular = ({data}) => {
             }
 
             localStorage.setItem("pageInfo", JSON.stringify(payload))
-            history.push(`/news/${data1.title}`)
+            history.push(`/Pentane/news/${data1.title}`)
         }
          const handleClick2 = ()=>{
             const payload  = {
@@ -130,7 +130,7 @@ const Section_popular = ({data}) => {
             }
 
             localStorage.setItem("pageInfo", JSON.stringify(payload))
-            history.push(`/news/${data2.title}`)
+            history.push(`/Pentane/news/${data2.title}`)
         }
         const handleClick3 = ()=>{
             const payload  = {
@@ -146,7 +146,7 @@ const Section_popular = ({data}) => {
             }
 
             localStorage.setItem("pageInfo", JSON.stringify(payload))
-            history.push(`/news/${data3.title}`)
+            history.push(`/Pentane/news/${data3.title}`)
         }
         const handleClick4 = ()=>{
             const payload  = {
@@ -162,7 +162,7 @@ const Section_popular = ({data}) => {
             }
 
             localStorage.setItem("pageInfo", JSON.stringify(payload))
-            history.push(`/news/${data4.title}`)
+            history.push(`/Pentane/news/${data4.title}`)
         }
             
     

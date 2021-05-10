@@ -198,13 +198,13 @@ function LoginPage() {
 
         <p>
           Don't have a Times account?{" "}
-          <Link to="/registration" className={classes.forgotLink}>
+          <Link to="/Pentane/registration" className={classes.forgotLink}>
             <b>Create one</b>
           </Link>{" "}
         </p>
       </div>
       {/*  */}
-      {isAuth && userType==="Admin"?<Redirect to="/admin"/>:isAuth?<Redirect to="/"/>:null}
+      {isAuth && userType==="Admin"?<Redirect to="/Pentane/admin"/>:isAuth?<Redirect to="/Pentane"/>:null}
     </>
   );  
 }

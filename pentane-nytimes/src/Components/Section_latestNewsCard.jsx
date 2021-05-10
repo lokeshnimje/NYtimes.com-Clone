@@ -114,7 +114,7 @@ const Section_latestNewsCard = ({published_date, title, abstract, byline, multim
     const handleClick = ()=>{
         
         localStorage.setItem("pageInfo", JSON.stringify(payload))
-        history.push(`/news/${title}`)
+        history.push(`/Pentane/news/${title}`)
     }
     return (
         <Wrapper onClick = {handleClick}>

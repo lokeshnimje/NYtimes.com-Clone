@@ -12,7 +12,7 @@ const Comment = () => {
     const [color, setColor] = useState("");
     const {user, isAuth} = useSelector(state => state.auth)
     const handleLogin = () => {
-    history.push("/login")
+    history.push("/Pentane/login")
     }
 
     const handleComments = () => {

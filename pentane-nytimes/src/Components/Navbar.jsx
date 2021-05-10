@@ -55,10 +55,10 @@ export default function Navbar() {
   const dispatch = useDispatch()
   const logout_user = () => {
       dispatch(logout())
-      history.push("/login")
+      history.push("/Pentane/login")
   }
   const handleHome = () => {
-    history.push('/')
+    history.push('/Pentane')
   }
   return (
     <div className={classes.root}>
@@ -67,7 +67,7 @@ export default function Navbar() {
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <SideMenuDrawer/>
           </IconButton>
-        <NavLink to = "/search"><FaSearch/></NavLink>
+        <NavLink to = "/Pentane/search"><FaSearch/></NavLink>
           <Typography>
             <h4>{(name)? name.toUpperCase(): ""}</h4>
           </Typography>
@@ -75,7 +75,7 @@ export default function Navbar() {
             <img style = {{ margin:"auto"}} src= {Logo} alt="The New Times" width="250px"  onClick = {handleHome}/>
           </Typography>
           <Button className={classes.login} variant="text" size="small">
-          {isAuth ? <Link className={classes.loginLink} onClick={logout_user}>LOGOUT</Link> :<Link  className={classes.loginLink} to='/login'>LOGIN</Link>}
+          {isAuth ? <Link className={classes.loginLink} onClick={logout_user}>LOGOUT</Link> :<Link  className={classes.loginLink} to='/Pentane/login'>LOGIN</Link>}
           </Button>
         </Toolbar>
       </AppBar>
