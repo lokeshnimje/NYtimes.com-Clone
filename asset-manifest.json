@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Pentane/static/css/main.44d937d4.chunk.css",
-    "main.js": "/Pentane/static/js/main.b79c2a95.chunk.js",
-    "main.js.map": "/Pentane/static/js/main.b79c2a95.chunk.js.map",
+    "main.js": "/Pentane/static/js/main.ba520044.chunk.js",
+    "main.js.map": "/Pentane/static/js/main.ba520044.chunk.js.map",
     "runtime-main.js": "/Pentane/static/js/runtime-main.ad5bc9e6.js",
     "runtime-main.js.map": "/Pentane/static/js/runtime-main.ad5bc9e6.js.map",
     "static/css/2.1beaf320.chunk.css": "/Pentane/static/css/2.1beaf320.chunk.css",
@@ -22,6 +22,6 @@
     "static/css/2.1beaf320.chunk.css",
     "static/js/2.04725e2f.chunk.js",
     "static/css/main.44d937d4.chunk.css",
-    "static/js/main.b79c2a95.chunk.js"
+    "static/js/main.ba520044.chunk.js"
   ]
 }
