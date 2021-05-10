@@ -34,19 +34,13 @@ const SectionNews = () => {
   },[name])
 
 
- 
-
-  // if (isLoading) {
-  //   return (
-  //     <div style ={{margin:"10px 40%",}}> <img style ={{margin:"auto",}} width="300px" height="300px" src="https://www.bluechipexterminating.com/wp-content/uploads/2020/02/loading-gif-png-5.gif" alt="loading"/> </div>
-  //   )
-  // } else if (isError) {
-  //   return (
-  //     <div > <img src={Error} alt="404 error" width = "500px" height = "400px"/></div>
-  //   )
-  // } else 
-  if (news) {
-        return (
+  return (
+    <>
+      {isLoading?<div style ={{margin:"10px 40%",}}> <img style ={{margin:"auto",}} width="300px" height="300px" src="https://www.bluechipexterminating.com/wp-content/uploads/2020/02/loading-gif-png-5.gif" alt="loading"/> </div>:null}
+      {isError?(
+      <div > <img src={Error} alt="404 error" width = "500px" height = "400px"/></div>
+      ):null}
+      {news?(
           <div>
             
             <div style = {{width:"90%", margin:"15px auto", marginTop:"50px"}}> 
@@ -61,8 +55,9 @@ const SectionNews = () => {
                   { <SECTION_LATEST_NEWS data = {news}/> }
             </div>
           </div>
-        )
-  }    
+        ):null}
+    </>
+  )    
 
 }
 
