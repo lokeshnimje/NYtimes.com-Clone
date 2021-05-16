@@ -1,4 +1,9 @@
 # A project on cloning of "The New York Times" website
+## Getting started 📚
+1) Use `git clone` to clone the repository.
+2) Install required dependencies with `npm install`.
+3) Run the server with `npm start`.
+
 ![Toggl Track](https://static01.nyt.com/vi-assets/images/share/1200x675_nameplate.png)
 
 
