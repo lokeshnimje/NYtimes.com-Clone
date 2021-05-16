@@ -3,6 +3,7 @@
 1) Use `git clone` to clone the repository.
 2) Install required dependencies with `npm install`.
 3) Run the server with `npm start`.
+### Live demo of this project available here https://nytimes-kappa.vercel.app/
 
 ![Toggl Track](https://static01.nyt.com/vi-assets/images/share/1200x675_nameplate.png)
 
