@@ -45,7 +45,7 @@ export const logout = () => {
 }
 const authentication=(payload)=>(dispatch)=>{
     dispatch(authRequest());
-   axios.get("http://localhost:3000/users")
+   axios.get("https://nytimespentane.herokuapp.com/users")
     .then(res=> dispatch(authSuccess(res.data)))
     .catch(err=> dispatch(authFailure()))
 }
