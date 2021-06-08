@@ -71,7 +71,7 @@ const RegisterationPage = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         // console.log(state)
-        axios.post("http://localhost:3000/users", {...state, savedArticle:[]})
+        axios.post("https://nytimespentane.herokuapp.com/users", {...state, savedArticle:[]})
         .then(res=> setIsRegistered(true))
         .catch(err => setIsError(true))
     }
